@@ -1,21 +1,21 @@
-exports.handler = async (event) => {
-  const headers = {
-    "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Access-Control-Allow-Methods": "GET, OPTIONS",
-    "Content-Type": "application/json",
-  };
+const CORS_HEADERS = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Headers": "Content-Type",
+  "Access-Control-Allow-Methods": "GET, OPTIONS",
+  "Content-Type": "application/json",
+};
 
+function jsonResponse(statusCode, body) {
+  return { statusCode, headers: CORS_HEADERS, body: JSON.stringify(body) };
+}
+
+exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") {
-    return { statusCode: 204, headers, body: "" };
+    return { statusCode: 204, headers: CORS_HEADERS, body: "" };
   }
 
   if (!process.env.MONGO_URL) {
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify([]),
-    };
+    return jsonResponse(200, []);
   }
 
   try {
@@ -31,17 +31,8 @@ exports.handler = async (event) => {
       .toArray();
     await mongo.close();
 
-    return {
-      statusCode: 200,
-      headers,
-      body: JSON.stringify(analyses),
-    };
+    return jsonResponse(200, analyses);
   } catch (err) {
-    console.error("History error:", err.message);
-    return {
-      statusCode: 500,
-      headers,
-      body: JSON.stringify({ detail: `Database error: ${err.message}` }),
-    };
+    return jsonResponse(500, { detail: `Database error: ${err.message}` });
   }
 };
