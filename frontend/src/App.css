@@ -443,8 +443,3 @@
   text-align: center;
   border-top: 1px solid rgba(51, 51, 51, 0.5);
 }
-
-/* Hide Made with Emergent badge */
-#emergent-badge {
-  display: none !important;
-}
