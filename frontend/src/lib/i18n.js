@@ -25,6 +25,7 @@ const t = {
     footer: "v2.1.77 // powered by neural ai",
     budgetError: "BUDGET EXCEEDED // Please top up your API key balance.",
     connectionError: "CONNECTION LOST // Failed to reach Night City servers. Try again, choom.",
+    rateLimitError: "Daily limit reached. Upgrade to premium for unlimited access.",
     loading: [
       "ESTABLISHING SECURE CONNECTION...",
       "DECRYPTING NIGHT CITY DATA...",
@@ -59,6 +60,7 @@ const t = {
     footer: "v2.1.77 // нейронный ии",
     budgetError: "БЮДЖЕТ ИСЧЕРПАН // Пополните баланс API ключа.",
     connectionError: "СОЕДИНЕНИЕ ПОТЕРЯНО // Не удалось связаться с серверами Найт-Сити. Попробуйте снова, чумба.",
+    rateLimitError: "Дневной лимит исчерпан. Перейдите на премиум для безлимитного доступа.",
     loading: [
       "УСТАНОВКА ЗАЩИЩЁННОГО СОЕДИНЕНИЯ...",
       "РАСШИФРОВКА ДАННЫХ НАЙТ-СИТИ...",

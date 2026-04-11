@@ -56,7 +56,17 @@ export function ResponseCard({ hint, sharing, loading, onRetry, onShare, onFollo
         </span>
       </div>
       <p className="font-['JetBrains_Mono'] text-sm text-[#00F0FF] leading-relaxed whitespace-pre-wrap">
-        {hint}
+        {hint === "__RATE_LIMITED__" ? (
+          <a
+            href="https://buy.stripe.com/fZudR9fur29n1oL7cZao802"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-testid="upgrade-link"
+            className="text-[#FCEE0A] underline hover:text-white transition-colors"
+          >
+            {lang.rateLimitError}
+          </a>
+        ) : hint}
       </p>
       <div className="response-corner-tl" />
       <div className="response-corner-br" />

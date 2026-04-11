@@ -66,10 +66,16 @@ function App() {
       });
       setHint(res.data.hint);
     } catch (err) {
+      const status = err.response?.status;
       const detail = err.response?.data?.detail;
-      const isBudgetError = err.response?.status === HTTP_PAYMENT_REQUIRED
+      const isBudgetError = status === HTTP_PAYMENT_REQUIRED
         || (detail && detail.toLowerCase().includes("budget"));
-      setHint(isBudgetError ? lang.budgetError : lang.connectionError);
+      const isRateLimited = status === 429;
+      if (isRateLimited) {
+        setHint("__RATE_LIMITED__");
+      } else {
+        setHint(isBudgetError ? lang.budgetError : lang.connectionError);
+      }
     } finally {
       clearInterval(interval);
       setLoading(false);
