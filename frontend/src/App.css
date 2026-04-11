@@ -1,34 +1,381 @@
-.App-logo {
-    height: 40vmin;
-    pointer-events: none;
+/* ==========================================
+   NIGHT CITY ASSISTANT - Cyberpunk UI
+   ========================================== */
+
+/* App Container */
+.app-container {
+  position: relative;
+  min-height: 100vh;
+  max-width: 28rem;
+  margin: 0 auto;
+  background-color: #050505;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .App-logo {
-        animation: App-logo-spin infinite 20s linear;
-    }
+/* Background overlay */
+.bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, rgba(255, 0, 60, 0.06) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
 }
 
-.App-header {
-    background-color: #0f0f10;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+/* Scanline effect */
+.scanline {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.05) 2px,
+    rgba(0, 0, 0, 0.05) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
 }
 
-.App-link {
-    color: #61dafb;
+/* Header */
+.app-header {
+  position: relative;
+  padding: 2rem 1rem 1rem;
+  z-index: 10;
+  border-bottom: 1px solid rgba(252, 238, 10, 0.15);
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+/* Main */
+.app-main {
+  position: relative;
+  flex: 1;
+  padding: 1.5rem 1rem;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Capture Section */
+.capture-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem 0;
+}
+
+/* Camera Button */
+.camera-btn {
+  position: relative;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 2px solid #FF003C;
+  background: rgba(5, 5, 5, 0.8);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 20px rgba(255, 0, 60, 0.4);
+}
+
+.camera-btn:hover {
+  background: rgba(255, 0, 60, 0.15);
+  box-shadow: 0 0 35px rgba(255, 0, 60, 0.7);
+  transform: scale(1.05);
+}
+
+.camera-btn:active {
+  transform: scale(0.95);
+}
+
+.camera-btn-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Crosshair decorators */
+.crosshair-top-left {
+  position: absolute;
+  top: 1.5rem;
+  left: 2rem;
+}
+
+.crosshair-bottom-right {
+  position: absolute;
+  bottom: 4.5rem;
+  right: 2rem;
+}
+
+/* Gallery Button */
+.gallery-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gallery-btn:hover {
+  border-color: #00F0FF;
+  background: rgba(0, 240, 255, 0.08);
+}
+
+/* Preview Section */
+.preview-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.image-preview-wrapper {
+  position: relative;
+  width: 100%;
+  max-height: 20rem;
+  overflow: hidden;
+  border: 2px solid #00F0FF;
+}
+
+.image-preview {
+  width: 100%;
+  max-height: 20rem;
+  object-fit: cover;
+  display: block;
+}
+
+/* Corner markers on preview */
+.corner-tl,
+.corner-tr,
+.corner-bl,
+.corner-br {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+}
+
+.corner-tl {
+  top: -1px;
+  left: -1px;
+  border-top: 3px solid #FCEE0A;
+  border-left: 3px solid #FCEE0A;
+}
+
+.corner-tr {
+  top: -1px;
+  right: -1px;
+  border-top: 3px solid #FCEE0A;
+  border-right: 3px solid #FCEE0A;
+}
+
+.corner-bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 3px solid #FCEE0A;
+  border-left: 3px solid #FCEE0A;
+}
+
+.corner-br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 3px solid #FCEE0A;
+  border-right: 3px solid #FCEE0A;
+}
+
+/* Get Hint Button */
+.get-hint-btn {
+  width: 100%;
+  padding: 1rem;
+  background: #FCEE0A;
+  color: #000;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.get-hint-btn:hover:not(:disabled) {
+  background: #e6d800;
+}
+
+.get-hint-btn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.get-hint-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Red accent on button corner */
+.get-hint-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #FF003C;
+}
+
+/* Clear Button */
+.clear-btn {
+  padding: 1rem;
+  border: 1px solid rgba(255, 0, 60, 0.4);
+  background: transparent;
+  color: #FF003C;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear-btn:hover:not(:disabled) {
+  background: rgba(255, 0, 60, 0.15);
+  border-color: #FF003C;
+}
+
+.clear-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Loading Container */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 0, 60, 0.2);
+  background: rgba(255, 0, 60, 0.03);
+  text-align: center;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #FF003C, transparent);
+  animation: loadingSweep 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingSweep {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+.loading-dots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.loading-dots span {
+  width: 6px;
+  height: 6px;
+  background: #FF003C;
+  animation: dotPulse 1s infinite;
+}
+
+.loading-dots span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.loading-dots span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes dotPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Response Card */
+.response-card {
+  position: relative;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(252, 238, 10, 0.3);
+  padding: 1.5rem;
+}
+
+.response-header {
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(252, 238, 10, 0.15);
+}
+
+/* Response corner markers */
+.response-corner-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: #FCEE0A;
+}
+
+.response-corner-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 8px;
+  height: 8px;
+  background: #FCEE0A;
+}
+
+/* Try Again Button */
+.try-again-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  background: transparent;
+  color: #00F0FF;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.try-again-btn:hover {
+  border-color: #00F0FF;
+  background: rgba(0, 240, 255, 0.08);
+}
+
+/* Footer */
+.app-footer {
+  position: relative;
+  z-index: 10;
+  padding: 1rem;
+  text-align: center;
+  border-top: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+/* Hide Made with Emergent badge */
+#emergent-badge {
+  display: none !important;
 }

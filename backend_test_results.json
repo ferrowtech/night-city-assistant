@@ -1,0 +1,41 @@
+{
+  "summary": {
+    "total_tests": 5,
+    "passed_tests": 5,
+    "failed_tests": 0,
+    "success_rate": 100.0
+  },
+  "test_results": [
+    {
+      "test": "Root API Endpoint",
+      "success": true,
+      "details": "Status: 200, Message: Night City Assistant API",
+      "timestamp": "2026-04-11T11:01:05.418768"
+    },
+    {
+      "test": "Analyze Endpoint - Invalid Data",
+      "success": true,
+      "details": "Correctly rejected invalid data with status 422",
+      "timestamp": "2026-04-11T11:01:05.527454"
+    },
+    {
+      "test": "Analyze Endpoint - Valid Image",
+      "success": true,
+      "details": "Status: 200, Hint length: 498 chars",
+      "timestamp": "2026-04-11T11:01:11.278494"
+    },
+    {
+      "test": "History Endpoint",
+      "success": true,
+      "details": "Status: 200, Items: 2",
+      "timestamp": "2026-04-11T11:01:11.411189"
+    },
+    {
+      "test": "CORS Headers",
+      "success": true,
+      "details": "CORS configured: {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH', 'Access-Control-Allow-Headers': '*'}",
+      "timestamp": "2026-04-11T11:01:11.478639"
+    }
+  ],
+  "timestamp": "2026-04-11T11:01:11.479640"
+}
