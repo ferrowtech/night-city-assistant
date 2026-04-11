@@ -1,7 +1,8 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import "@/App.css";
 import axios from "axios";
-import { API_BASE, HTTP_PAYMENT_REQUIRED, LOADING_MESSAGES, LOADING_INTERVAL_MS } from "@/constants";
+import { API_BASE, HTTP_PAYMENT_REQUIRED, LOADING_INTERVAL_MS } from "@/constants";
+import { i18n } from "@/lib/i18n";
 import { shareOrDownload } from "@/lib/share-image";
 import { CaptureSection } from "@/components/CaptureSection";
 import { PreviewSection } from "@/components/PreviewSection";
@@ -21,6 +22,8 @@ function App() {
   const [userQuestion, setUserQuestion] = useState("");
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
+
+  const lang = useMemo(() => i18n(language), [language]);
 
   const handleImageSelect = useCallback((e) => {
     const file = e.target.files?.[0];
@@ -47,11 +50,12 @@ function App() {
     if (!imageData) return;
     setLoading(true);
     setHint(null);
+    const msgs = lang.loading;
     let msgIdx = 0;
-    setLoadingText(LOADING_MESSAGES[0]);
+    setLoadingText(msgs[0]);
     const interval = setInterval(() => {
-      msgIdx = (msgIdx + 1) % LOADING_MESSAGES.length;
-      setLoadingText(LOADING_MESSAGES[msgIdx]);
+      msgIdx = (msgIdx + 1) % msgs.length;
+      setLoadingText(msgs[msgIdx]);
     }, LOADING_INTERVAL_MS);
     try {
       const res = await axios.post(`${API_BASE}/analyze`, {
@@ -65,22 +69,12 @@ function App() {
       const detail = err.response?.data?.detail;
       const isBudgetError = err.response?.status === HTTP_PAYMENT_REQUIRED
         || (detail && detail.toLowerCase().includes("budget"));
-      if (isBudgetError) {
-        setHint(language === "ru"
-          ? "БЮДЖЕТ ИСЧЕРПАН // Пополните баланс Universal Key: Profile → Universal Key → Add Balance."
-          : "BUDGET EXCEEDED // Please top up your Universal Key balance at Profile → Universal Key → Add Balance."
-        );
-      } else {
-        setHint(language === "ru"
-          ? "СОЕДИНЕНИЕ ПОТЕРЯНО // Не удалось связаться с серверами Найт-Сити. Попробуйте снова, чумба."
-          : "CONNECTION LOST // Failed to reach Night City servers. Try again, choom."
-        );
-      }
+      setHint(isBudgetError ? lang.budgetError : lang.connectionError);
     } finally {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language, userQuestion]);
+  }, [imageData, language, userQuestion, lang]);
 
   const handleShare = useCallback(async () => {
     if (!hint) return;
@@ -89,7 +83,7 @@ function App() {
       await shareOrDownload(hint);
     } catch (err) {
       if (err.name !== "AbortError") {
-        // Share was cancelled or failed silently
+        // Share cancelled silently
       }
     } finally {
       setSharing(false);
@@ -114,10 +108,11 @@ function App() {
           NIGHT CITY ASSISTANT
         </h1>
         <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] text-center mt-2 tracking-wider uppercase">
-          // cyberpunk 2077 ai companion
+          {lang.subtitle}
         </p>
         <HeaderControls
           language={language}
+          lang={lang}
           onToggleLanguage={toggleLanguage}
           settingsOpen={settingsOpen}
           onSettingsChange={setSettingsOpen}
@@ -127,7 +122,7 @@ function App() {
       <main className="app-main">
         {!imagePreview ? (
           <CaptureSection
-            language={language}
+            lang={lang}
             cameraInputRef={cameraInputRef}
             galleryInputRef={galleryInputRef}
             onImageSelect={handleImageSelect}
@@ -138,7 +133,7 @@ function App() {
             userQuestion={userQuestion}
             onQuestionChange={setUserQuestion}
             loading={loading}
-            language={language}
+            lang={lang}
             onGetHint={getHint}
             onClear={clearImage}
           />
@@ -152,13 +147,14 @@ function App() {
             sharing={sharing}
             onRetry={getHint}
             onShare={handleShare}
+            lang={lang}
           />
         )}
       </main>
 
       <footer className="app-footer">
         <p className="font-['JetBrains_Mono'] text-[10px] text-[#333] tracking-wider uppercase">
-          v2.1.77 // powered by neural ai
+          {lang.footer}
         </p>
       </footer>
     </div>

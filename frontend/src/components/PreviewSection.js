@@ -1,12 +1,7 @@
 import { Loader2, Trash2 } from "lucide-react";
 import { ICON_LOADING, ICON_ACTION } from "@/constants";
 
-function getButtonLabel(language, loading) {
-  if (loading) return <Loader2 size={ICON_LOADING} className="animate-spin" />;
-  return language === "ru" ? "ПОЛУЧИТЬ ПОДСКАЗКУ" : "GET HINT";
-}
-
-export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, loading, language, onGetHint, onClear }) {
+export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, loading, lang, onGetHint, onClear }) {
   return (
     <div className="preview-section" data-testid="preview-section">
       <div className="image-preview-wrapper">
@@ -21,7 +16,7 @@ export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, l
         className="user-question-input"
         value={userQuestion}
         onChange={(e) => onQuestionChange(e.target.value)}
-        placeholder="Задайте вопрос или добавьте контекст..."
+        placeholder={lang.questionPlaceholder}
         rows={2}
         disabled={loading}
       />
@@ -32,7 +27,7 @@ export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, l
           onClick={onGetHint}
           disabled={loading}
         >
-          {getButtonLabel(language, loading)}
+          {loading ? <Loader2 size={ICON_LOADING} className="animate-spin" /> : lang.getHint}
         </button>
         <button
           data-testid="clear-image-btn"

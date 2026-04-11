@@ -1,7 +1,7 @@
 import { Camera, Crosshair, Upload } from "lucide-react";
 import { ICON_CAMERA, ICON_SMALL, ICON_MEDIUM } from "@/constants";
 
-export function CaptureSection({ language, cameraInputRef, galleryInputRef, onImageSelect }) {
+export function CaptureSection({ lang, cameraInputRef, galleryInputRef, onImageSelect }) {
   return (
     <div className="capture-section" data-testid="capture-section">
       <label className="camera-btn group" data-testid="camera-button">
@@ -17,7 +17,7 @@ export function CaptureSection({ language, cameraInputRef, galleryInputRef, onIm
         <div className="camera-btn-inner">
           <Camera size={ICON_CAMERA} className="text-[#FF003C] group-hover:scale-110 transition-transform" />
           <span className="font-['JetBrains_Mono'] text-xs text-[#FF003C] uppercase tracking-wider mt-1">
-            {language === "ru" ? "Снимок" : "Capture"}
+            {lang.capture}
           </span>
         </div>
       </label>
@@ -34,7 +34,7 @@ export function CaptureSection({ language, cameraInputRef, galleryInputRef, onIm
         />
         <Upload size={ICON_MEDIUM} className="text-[#00F0FF]" />
         <span className="font-['JetBrains_Mono'] text-xs text-[#00F0FF] uppercase tracking-wider">
-          {language === "ru" ? "Загрузить скриншот" : "Upload Screenshot"}
+          {lang.uploadScreenshot}
         </span>
       </label>
     </div>

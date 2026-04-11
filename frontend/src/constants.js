@@ -31,14 +31,5 @@ export const ICON_MEDIUM = 16;
 export const ICON_ACTION = 18;
 export const ICON_LOADING = 20;
 
-// Loading messages
-export const LOADING_MESSAGES = [
-  "ESTABLISHING SECURE CONNECTION...",
-  "DECRYPTING NIGHT CITY DATA...",
-  "SCANNING NEURAL INTERFACE...",
-  "ANALYZING COMBAT ZONE...",
-  "PROCESSING VISUAL INPUT...",
-];
-
 // Loading message rotation interval (ms)
 export const LOADING_INTERVAL_MS = 2000;

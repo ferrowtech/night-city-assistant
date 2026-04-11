@@ -1,12 +1,12 @@
 import { RotateCcw, Share2, Loader2 } from "lucide-react";
 import { ICON_SMALL } from "@/constants";
 
-export function ResponseCard({ hint, sharing, onRetry, onShare }) {
+export function ResponseCard({ hint, sharing, onRetry, onShare, lang }) {
   return (
     <div className="response-card" data-testid="response-container">
       <div className="response-header">
         <span className="font-['Orbitron'] text-xs text-[#FCEE0A] tracking-widest uppercase">
-          // INTEL RECEIVED
+          {lang.intelReceived}
         </span>
       </div>
       <p className="font-['JetBrains_Mono'] text-sm text-[#00F0FF] leading-relaxed whitespace-pre-wrap">
@@ -18,7 +18,7 @@ export function ResponseCard({ hint, sharing, onRetry, onShare }) {
       <div className="flex gap-3 mt-4 flex-wrap">
         <button data-testid="try-again-btn" className="try-again-btn" onClick={onRetry}>
           <RotateCcw size={ICON_SMALL} />
-          <span className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider">Re-analyze</span>
+          <span className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider">{lang.reAnalyze}</span>
         </button>
         <button
           data-testid="share-hint-btn"
@@ -31,7 +31,7 @@ export function ResponseCard({ hint, sharing, onRetry, onShare }) {
             : <Share2 size={ICON_SMALL} />
           }
           <span className="font-['JetBrains_Mono'] text-xs uppercase tracking-wider">
-            {sharing ? "Generating..." : "Share Hint"}
+            {sharing ? lang.generating : lang.shareHint}
           </span>
         </button>
       </div>

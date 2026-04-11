@@ -9,14 +9,14 @@ import {
 } from "@/components/ui/dialog";
 import { ICON_SETTINGS, ICON_SMALL } from "@/constants";
 
-export function HeaderControls({ language, onToggleLanguage, settingsOpen, onSettingsChange }) {
+export function HeaderControls({ language, lang, onToggleLanguage, settingsOpen, onSettingsChange }) {
   return (
     <div className="absolute top-4 right-4 flex items-center gap-1 z-50">
       <button
         data-testid="language-toggle-btn"
         onClick={onToggleLanguage}
         className="lang-toggle-btn"
-        title={language === "ru" ? "Switch to English" : "Switch to Russian"}
+        title={lang.switchLang}
       >
         <Globe size={ICON_SMALL} />
         <span className="font-['JetBrains_Mono'] text-[10px] font-bold uppercase">
@@ -36,39 +36,29 @@ export function HeaderControls({ language, onToggleLanguage, settingsOpen, onSet
         <DialogContent className="bg-[#050505] border border-[#FF003C] text-white max-w-sm">
           <DialogHeader>
             <DialogTitle className="font-['Orbitron'] text-[#FCEE0A] tracking-wider uppercase text-lg">
-              SYSTEM CONFIG
+              {lang.systemConfig}
             </DialogTitle>
             <DialogDescription className="font-['JetBrains_Mono'] text-[#A0A0A0] text-xs">
-              // Night City Assistant v2.1.77
+              {lang.version}
             </DialogDescription>
           </DialogHeader>
           <div className="space-y-4 mt-2">
             <div className="border border-[#333] p-4">
-              <p className="font-['JetBrains_Mono'] text-xs text-[#00F0FF] mb-2">STATUS:</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#00F0FF] mb-2">{lang.status}</p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#00FF41] animate-pulse" />
-                <span className="font-['JetBrains_Mono'] text-xs text-[#00FF41]">NEURAL LINK ACTIVE</span>
+                <span className="font-['JetBrains_Mono'] text-xs text-[#00FF41]">{lang.neuralLinkActive}</span>
               </div>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-3">AI Model: Claude Sonnet 4</p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-1">Protocol: Emergent Universal Key</p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-1">
-                Language: {language === "ru" ? "Russian" : "English"}
-              </p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-3">{lang.aiModel}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-1">{lang.protocol}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] mt-1">{lang.languageLabel}</p>
             </div>
             <div className="border border-[#333] p-4">
-              <p className="font-['JetBrains_Mono'] text-xs text-[#FF003C] mb-2">INSTRUCTIONS:</p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">
-                1. Take a photo or upload a screenshot from Cyberpunk 2077
-              </p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">
-                2. Hit GET HINT for AI-powered gameplay tips
-              </p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">
-                3. Use the share button to export your hint as a styled image
-              </p>
-              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">
-                4. Toggle RU/EN for language preference
-              </p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#FF003C] mb-2">{lang.instructions}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">{lang.step1}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">{lang.step2}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">{lang.step3}</p>
+              <p className="font-['JetBrains_Mono'] text-xs text-[#A0A0A0] leading-relaxed">{lang.step4}</p>
             </div>
           </div>
         </DialogContent>
