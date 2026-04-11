@@ -1,4 +1,4 @@
-from fastapi import FastAPI, APIRouter
+from fastapi import FastAPI, APIRouter, HTTPException
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
 from motor.motor_asyncio import AsyncIOMotorClient
@@ -85,7 +85,7 @@ async def root():
 async def analyze_screenshot(request: AnalyzeRequest):
     api_key = os.environ.get('EMERGENT_LLM_KEY')
     if not api_key:
-        raise Exception("EMERGENT_LLM_KEY not configured")
+        raise HTTPException(status_code=500, detail="EMERGENT_LLM_KEY not configured")
 
     kb_json = await fetch_knowledge_base()
     system_prompt = build_system_prompt(kb_json, request.language or "ru")
@@ -106,7 +106,17 @@ async def analyze_screenshot(request: AnalyzeRequest):
         file_contents=[image_content],
     )
 
-    response = await chat.send_message(user_message)
+    try:
+        response = await chat.send_message(user_message)
+    except Exception as e:
+        error_msg = str(e).lower()
+        if "budget" in error_msg or "exceeded" in error_msg:
+            raise HTTPException(
+                status_code=402,
+                detail="API budget exceeded. Please top up your Universal Key balance at Profile → Universal Key → Add Balance."
+            )
+        logger.error("Claude API error: %s", e)
+        raise HTTPException(status_code=502, detail=f"AI service error: {str(e)}")
 
     analysis_id = str(uuid.uuid4())
     now = datetime.now(timezone.utc).isoformat()

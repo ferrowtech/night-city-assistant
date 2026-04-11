@@ -75,7 +75,18 @@ function App() {
       setHint(res.data.hint);
     } catch (err) {
       console.error("Analysis failed:", err);
-      setHint("CONNECTION LOST // Failed to reach Night City servers. Try again, choom.");
+      const detail = err.response?.data?.detail;
+      if (err.response?.status === 402 || (detail && detail.toLowerCase().includes("budget"))) {
+        setHint(language === "ru"
+          ? "БЮДЖЕТ ИСЧЕРПАН // Пополните баланс Universal Key: Profile → Universal Key → Add Balance."
+          : "BUDGET EXCEEDED // Please top up your Universal Key balance at Profile → Universal Key → Add Balance."
+        );
+      } else {
+        setHint(language === "ru"
+          ? "СОЕДИНЕНИЕ ПОТЕРЯНО // Не удалось связаться с серверами Найт-Сити. Попробуйте снова, чумба."
+          : "CONNECTION LOST // Failed to reach Night City servers. Try again, choom."
+        );
+      }
     } finally {
       clearInterval(interval);
       setLoading(false);
@@ -368,7 +379,7 @@ function App() {
                 onClick={getHint}
                 disabled={loading}
               >
-                {loading ? <Loader2 size={20} className="animate-spin" /> : "GET HINT"}
+                {loading ? <Loader2 size={20} className="animate-spin" /> : (language === "ru" ? "ПОЛУЧИТЬ ПОДСКАЗКУ" : "GET HINT")}
               </button>
               <button
                 data-testid="clear-image-btn"
