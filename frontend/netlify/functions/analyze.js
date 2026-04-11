@@ -144,6 +144,7 @@ async function callClaudeAPI(apiKey, systemPrompt, mediaType, imageBase64, userQ
 
 async function storeInMongo(hint, userQuestion, language, timestamp) {
   if (!process.env.MONGO_URL) return;
+  console.log("[analyze] Saving to MongoDB");
   try {
     const { MongoClient } = require("mongodb");
     const mongo = new MongoClient(process.env.MONGO_URL);
@@ -156,8 +157,9 @@ async function storeInMongo(hint, userQuestion, language, timestamp) {
       language,
     });
     await mongo.close();
-  } catch (_) {
-    // non-blocking
+    console.log("[analyze] MongoDB saved");
+  } catch (e) {
+    console.log(`[analyze] MongoDB error: ${e.message}`);
   }
 }
 
