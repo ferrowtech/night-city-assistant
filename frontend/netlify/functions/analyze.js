@@ -118,12 +118,19 @@ exports.handler = async (event) => {
   const { image_base64, language = "en", user_question = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
+  const apiKey = process.env.EMERGENT_LLM_KEY;
+  console.log("[analyze] EMERGENT_LLM_KEY present:", !!apiKey, "| length:", apiKey ? apiKey.length : 0);
+  console.log("[analyze] language:", language, "| image size:", image_base64.length, "chars");
+
   try {
     const kb = await fetchKnowledgeBase();
+    console.log("[analyze] Knowledge base loaded:", kb.length, "chars");
     const systemPrompt = buildSystemPrompt(kb, language);
     const mimeType = getMimeType(image_base64);
+    console.log("[analyze] Calling Claude API | model: claude-sonnet-4-20250514 | proxy:", EMERGENT_PROXY_URL);
 
-    const hint = await callClaudeAPI(process.env.EMERGENT_LLM_KEY, systemPrompt, mimeType, image_base64, user_question);
+    const hint = await callClaudeAPI(apiKey, systemPrompt, mimeType, image_base64, user_question);
+    console.log("[analyze] Claude response received:", hint.length, "chars");
     const id = crypto.randomUUID();
     const timestamp = new Date().toISOString();
 
@@ -131,6 +138,8 @@ exports.handler = async (event) => {
 
     return jsonResponse(200, { id, hint, timestamp });
   } catch (err) {
+    console.log("[analyze] ERROR:", err.message);
+    console.log("[analyze] Error type:", err.constructor.name);
     const msg = (err.message || "").toLowerCase();
     if (msg.includes("budget") || msg.includes("exceeded")) {
       return jsonResponse(HTTP_PAYMENT_REQUIRED, {
