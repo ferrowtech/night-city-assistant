@@ -21,7 +21,7 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [loadingText, setLoadingText] = useState("");
   const [settingsOpen, setSettingsOpen] = useState(false);
-  const [language, setLanguage] = useState("ru");
+  const [language, setLanguage] = useState("en");
   const [sharing, setSharing] = useState(false);
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
