@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from "react";
+import { useState, useRef, useCallback, useMemo } from "react";
 import "@/App.css";
 import axios from "axios";
 import { Camera, Upload, Settings, Crosshair, Loader2, Trash2, RotateCcw, Share2, Download, Globe } from "lucide-react";
@@ -27,13 +27,13 @@ function App() {
   const galleryInputRef = useRef(null);
   const shareCanvasRef = useRef(null);
 
-  const loadingMessages = [
+  const loadingMessages = useMemo(() => [
     "ESTABLISHING SECURE CONNECTION...",
     "DECRYPTING NIGHT CITY DATA...",
     "SCANNING NEURAL INTERFACE...",
     "ANALYZING COMBAT ZONE...",
     "PROCESSING VISUAL INPUT...",
-  ];
+  ], []);
 
   const handleImageSelect = useCallback((e) => {
     const file = e.target.files?.[0];
