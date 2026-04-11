@@ -142,24 +142,39 @@ async function callClaudeAPI(apiKey, systemPrompt, mediaType, imageBase64, userQ
   return textBlock?.text || "";
 }
 
-async function storeInMongo(hint, userQuestion, language, timestamp) {
-  if (!process.env.MONGO_URL) return;
-  console.log("[analyze] Saving to MongoDB");
+const NOTION_DB_ID = "27adb0059c7e44cbb54eebffada993d1";
+
+async function saveToNotion(hint, userQuestion, language, clientIp) {
+  if (!process.env.NOTION_TOKEN) return;
+  console.log("[analyze] Saving to Notion");
+  const title = userQuestion ? userQuestion.slice(0, 50) : "Screenshot analysis";
   try {
-    const { MongoClient } = require("mongodb");
-    const mongo = new MongoClient(process.env.MONGO_URL);
-    await mongo.connect();
-    const db = mongo.db("nightcity");
-    await db.collection("analyses").insertOne({
-      timestamp,
-      user_question: userQuestion,
-      response: hint,
-      language,
+    const res = await fetch("https://api.notion.com/v1/pages", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${process.env.NOTION_TOKEN}`,
+        "Content-Type": "application/json",
+        "Notion-Version": "2022-06-28",
+      },
+      body: JSON.stringify({
+        parent: { database_id: NOTION_DB_ID },
+        properties: {
+          Name: { title: [{ text: { content: title } }] },
+          Question: { rich_text: [{ text: { content: userQuestion || "" } }] },
+          Response: { rich_text: [{ text: { content: hint.slice(0, 2000) } }] },
+          Language: { select: { name: language } },
+          IP: { rich_text: [{ text: { content: clientIp } }] },
+        },
+      }),
     });
-    await mongo.close();
-    console.log("[analyze] MongoDB saved");
+    if (!res.ok) {
+      const err = await res.json();
+      console.log(`[analyze] Notion error: ${res.status} ${JSON.stringify(err)}`);
+    } else {
+      console.log("[analyze] Notion saved");
+    }
   } catch (e) {
-    console.log(`[analyze] MongoDB error: ${e.message}`);
+    console.log(`[analyze] Notion error: ${e.message}`);
   }
 }
 
@@ -175,13 +190,13 @@ exports.handler = async (event) => {
   const { image_base64, language = "en", user_question = "", promo_code = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
+  const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
+    || event.headers["client-ip"]
+    || "unknown";
+
   const hasPremium = VALID_PROMO_CODES.includes(promo_code);
 
   if (!hasPremium) {
-    const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
-      || event.headers["client-ip"]
-      || "unknown";
-
     if (!checkRateLimit(clientIp)) {
       return jsonResponse(HTTP_TOO_MANY_REQUESTS, {
         detail: "Daily limit reached. Upgrade to premium for unlimited access.",
@@ -197,9 +212,10 @@ exports.handler = async (event) => {
     const mediaType = getMimeType(image_base64);
 
     const hint = await callClaudeAPI(process.env.ANTHROPIC_API_KEY, systemPrompt, mediaType, image_base64, user_question);
+    console.log("[analyze] Response received:", hint.length, "chars");
     const id = crypto.randomUUID();
     const timestamp = new Date().toISOString();
-    await storeInMongo(hint, user_question, language, timestamp);
+    await saveToNotion(hint, user_question, language, clientIp);
 
     return jsonResponse(200, { id, hint, timestamp });
   } catch (err) {
