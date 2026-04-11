@@ -3,6 +3,7 @@ import "@/App.css";
 import axios from "axios";
 import { API_BASE, HTTP_PAYMENT_REQUIRED, LOADING_INTERVAL_MS } from "@/constants";
 import { i18n } from "@/lib/i18n";
+import { compressImage } from "@/lib/compress-image";
 import { shareOrDownload } from "@/lib/share-image";
 import { CaptureSection } from "@/components/CaptureSection";
 import { PreviewSection } from "@/components/PreviewSection";
@@ -19,20 +20,20 @@ function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [language, setLanguage] = useState("en");
   const [sharing, setSharing] = useState(false);
-  const [userQuestion, setUserQuestion] = useState("");
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
 
   const lang = useMemo(() => i18n(language), [language]);
 
-  const handleImageSelect = useCallback((e) => {
+  const handleImageSelect = useCallback(async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = (event) => {
-      const result = event.target.result;
-      setImagePreview(result);
-      setImageData(result.split(",")[1]);
+    reader.onload = async (event) => {
+      const rawDataUrl = event.target.result;
+      const compressed = await compressImage(rawDataUrl);
+      setImagePreview(compressed);
+      setImageData(compressed.split(",")[1]);
       setHint(null);
     };
     reader.readAsDataURL(file);
@@ -46,10 +47,9 @@ function App() {
     if (galleryInputRef.current) galleryInputRef.current.value = "";
   }, []);
 
-  const getHint = useCallback(async () => {
+  const sendToAPI = useCallback(async (userQuestion) => {
     if (!imageData) return;
     setLoading(true);
-    setHint(null);
     const msgs = lang.loading;
     let msgIdx = 0;
     setLoadingText(msgs[0]);
@@ -74,7 +74,15 @@ function App() {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language, userQuestion, lang]);
+  }, [imageData, language, lang]);
+
+  const getHint = useCallback(() => {
+    sendToAPI("");
+  }, [sendToAPI]);
+
+  const handleFollowUp = useCallback((question) => {
+    sendToAPI(question);
+  }, [sendToAPI]);
 
   const handleShare = useCallback(async () => {
     if (!hint) return;
@@ -130,8 +138,6 @@ function App() {
         ) : (
           <PreviewSection
             imagePreview={imagePreview}
-            userQuestion={userQuestion}
-            onQuestionChange={setUserQuestion}
             loading={loading}
             lang={lang}
             onGetHint={getHint}
@@ -145,8 +151,10 @@ function App() {
           <ResponseCard
             hint={hint}
             sharing={sharing}
+            loading={loading}
             onRetry={getHint}
             onShare={handleShare}
+            onFollowUp={handleFollowUp}
             lang={lang}
           />
         )}
