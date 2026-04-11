@@ -92,7 +92,7 @@ function App() {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language, loadingMessages, userQuestion]);
+  }, [imageData, language, loadingMessages]);
 
   const generateShareImage = useCallback(() => {
     return new Promise((resolve) => {
