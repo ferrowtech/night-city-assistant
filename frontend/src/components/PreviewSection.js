@@ -6,7 +6,7 @@ const textareaStyle = {
   padding: "0.75rem",
   background: "#0a0a0a",
   border: "1px solid rgba(252, 238, 10, 0.4)",
-  color: "#FCEE0A",
+  color: "#00FF41",
   fontFamily: "'JetBrains Mono', monospace",
   fontSize: "0.8rem",
   resize: "none",

@@ -1,5 +1,4 @@
-const Anthropic = require("@anthropic-ai/sdk");
-
+const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const KNOWLEDGE_BASE_URL =
   "https://raw.githubusercontent.com/ferrowtech/cyberpunk-knowledge-base/refs/heads/main/cyberpunk_2077_knowledge_base.json";
 const HTTP_PAYMENT_REQUIRED = 402;
@@ -14,7 +13,7 @@ async function fetchKnowledgeBase() {
     knowledgeBaseCache = await res.text();
     console.log("[analyze] Knowledge base loaded:", knowledgeBaseCache.length, "chars");
   } catch (e) {
-    console.log("[analyze] Knowledge base fetch failed:", e.message);
+    console.log("[analyze] KB fetch failed:", e.message);
     knowledgeBaseCache = "{}";
   }
   return knowledgeBaseCache;
@@ -56,6 +55,7 @@ function validateRequest(event) {
     return jsonResponse(405, { detail: "Method not allowed" });
   }
   if (!process.env.ANTHROPIC_API_KEY) {
+    console.log("[analyze] ERROR: ANTHROPIC_API_KEY not set");
     return jsonResponse(500, { detail: "ANTHROPIC_API_KEY not configured in Netlify environment variables" });
   }
   return null;
@@ -70,41 +70,55 @@ function parseBody(event) {
 }
 
 async function callClaudeAPI(apiKey, systemPrompt, mediaType, imageBase64, userQuestion) {
-  const client = new Anthropic({ apiKey });
-
   let userText = "Analyze this Cyberpunk 2077 screenshot and give me a gameplay tip.";
   if (userQuestion) {
     userText += ` User's question: ${userQuestion}`;
   }
 
-  console.log("[analyze] Calling Anthropic API | model: claude-sonnet-4-20250514");
+  console.log("[analyze] Calling Anthropic API via fetch");
 
-  const response = await client.messages.create({
-    model: "claude-sonnet-4-20250514",
-    max_tokens: 1024,
-    system: systemPrompt,
-    messages: [
-      {
-        role: "user",
-        content: [
-          {
-            type: "image",
-            source: {
-              type: "base64",
-              media_type: mediaType,
-              data: imageBase64,
+  const res = await fetch(ANTHROPIC_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+    },
+    body: JSON.stringify({
+      model: "claude-sonnet-4-20250514",
+      max_tokens: 1024,
+      system: systemPrompt,
+      messages: [
+        {
+          role: "user",
+          content: [
+            {
+              type: "image",
+              source: {
+                type: "base64",
+                media_type: mediaType,
+                data: imageBase64,
+              },
             },
-          },
-          {
-            type: "text",
-            text: userText,
-          },
-        ],
-      },
-    ],
+            {
+              type: "text",
+              text: userText,
+            },
+          ],
+        },
+      ],
+    }),
   });
 
-  const textBlock = response.content.find((b) => b.type === "text");
+  const data = await res.json();
+
+  if (!res.ok) {
+    console.log("[analyze] Anthropic API error:", res.status, JSON.stringify(data));
+    throw new Error(data.error?.message || `Anthropic API returned ${res.status}`);
+  }
+
+  console.log("[analyze] Response received, stop_reason:", data.stop_reason);
+  const textBlock = data.content?.find((b) => b.type === "text");
   return textBlock?.text || "";
 }
 
@@ -118,7 +132,7 @@ async function storeInMongo(id, hint, language, timestamp) {
     await db.collection("analyses").insertOne({ id, hint, language, timestamp });
     await mongo.close();
   } catch (_) {
-    // MongoDB storage is non-blocking
+    // non-blocking
   }
 }
 
@@ -132,8 +146,7 @@ exports.handler = async (event) => {
   const { image_base64, language = "en", user_question = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
-  console.log("[analyze] ANTHROPIC_API_KEY present:", !!process.env.ANTHROPIC_API_KEY);
-  console.log("[analyze] language:", language, "| image size:", image_base64.length, "chars");
+  console.log("[analyze] language:", language, "| image:", image_base64.length, "chars");
 
   try {
     const kb = await fetchKnowledgeBase();
@@ -141,8 +154,6 @@ exports.handler = async (event) => {
     const mediaType = getMimeType(image_base64);
 
     const hint = await callClaudeAPI(process.env.ANTHROPIC_API_KEY, systemPrompt, mediaType, image_base64, user_question);
-    console.log("[analyze] Response received:", hint.length, "chars");
-
     const id = crypto.randomUUID();
     const timestamp = new Date().toISOString();
     await storeInMongo(id, hint, language, timestamp);
@@ -152,9 +163,7 @@ exports.handler = async (event) => {
     console.log("[analyze] ERROR:", err.message);
     const msg = (err.message || "").toLowerCase();
     if (msg.includes("budget") || msg.includes("exceeded") || msg.includes("credit") || msg.includes("billing")) {
-      return jsonResponse(HTTP_PAYMENT_REQUIRED, {
-        detail: "API budget exceeded. Check your Anthropic billing.",
-      });
+      return jsonResponse(HTTP_PAYMENT_REQUIRED, { detail: "API budget exceeded." });
     }
     return jsonResponse(502, { detail: `AI service error: ${err.message}` });
   }
