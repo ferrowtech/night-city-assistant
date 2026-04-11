@@ -41,15 +41,16 @@ async def fetch_knowledge_base():
     global knowledge_base_cache
     if knowledge_base_cache is not None:
         return knowledge_base_cache
+    result = "{}"
     try:
         async with httpx.AsyncClient(timeout=30) as http_client:
             resp = await http_client.get(KNOWLEDGE_BASE_URL)
             resp.raise_for_status()
-            knowledge_base_cache = resp.text
-            logger.info("Knowledge base fetched successfully (%d chars)", len(knowledge_base_cache))
+            result = resp.text
+            logger.info("Knowledge base fetched successfully (%d chars)", len(result))
     except Exception as e:
         logger.error("Failed to fetch knowledge base: %s", e)
-        knowledge_base_cache = "{}"
+    knowledge_base_cache = result
     return knowledge_base_cache
 
 
@@ -106,6 +107,7 @@ async def analyze_screenshot(request: AnalyzeRequest):
         file_contents=[image_content],
     )
 
+    response = None
     try:
         response = await chat.send_message(user_message)
     except Exception as e:
@@ -117,6 +119,9 @@ async def analyze_screenshot(request: AnalyzeRequest):
             )
         logger.error("Claude API error: %s", e)
         raise HTTPException(status_code=502, detail=f"AI service error: {str(e)}")
+
+    if response is None:
+        raise HTTPException(status_code=502, detail="AI service returned empty response")
 
     analysis_id = str(uuid.uuid4())
     now = datetime.now(timezone.utc).isoformat()
