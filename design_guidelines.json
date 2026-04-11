@@ -1,0 +1,87 @@
+{
+  "theme_and_archetype": {
+    "theme": "DARK",
+    "archetype": "7 (Electric & Neon)",
+    "description": "Cyberpunk 2077 immersive terminal UI. Aggressive contrast, deep void black, neon yellow/red accents, technical HUD elements."
+  },
+  "typography": {
+    "primary_font": "Orbitron",
+    "body_font": "JetBrains Mono",
+    "rules": {
+      "headings": "font-['Orbitron',_sans-serif] tracking-widest uppercase",
+      "body": "font-['JetBrains_Mono',_monospace]",
+      "title_glitch": "Apply custom .glitch class to the main H1"
+    }
+  },
+  "color_palette": {
+    "background": "#050505",
+    "surface": "#0a0a0a",
+    "border": "#333333",
+    "cyberpunk_yellow": "#FCEE0A",
+    "neon_red": "#FF003C",
+    "neon_cyan": "#00F0FF",
+    "terminal_green": "#00FF41",
+    "text_primary": "#FFFFFF",
+    "text_muted": "#A0A0A0"
+  },
+  "spacing_and_layout": {
+    "container": "mobile-first, max-w-md mx-auto min-h-screen relative overflow-hidden bg-[#050505]",
+    "padding": "p-4 sm:p-6",
+    "grid": "flex flex-col gap-6",
+    "corners": "rounded-none"
+  },
+  "components": {
+    "title": {
+      "classes": "text-4xl font-bold text-center text-[#FCEE0A] glitch tracking-widest uppercase my-8",
+      "details": "Must have data-text attribute matching inner text for CSS glitch to work"
+    },
+    "camera_button": {
+      "classes": "relative w-40 h-40 mx-auto rounded-full border-2 border-[#FF003C] bg-[#050505]/80 text-[#FF003C] hover:bg-[#FF003C]/20 hover:scale-105 transition-all flex flex-col items-center justify-center gap-2 group cursor-pointer",
+      "inner_glow": "shadow-[0_0_20px_rgba(255,0,60,0.5)] group-hover:shadow-[0_0_35px_rgba(255,0,60,0.8)]"
+    },
+    "action_button": {
+      "classes": "w-full py-4 bg-[#FCEE0A] text-black font-['Orbitron'] font-bold text-xl tracking-wider uppercase hover:bg-yellow-300 transition-colors border-none relative overflow-hidden active:scale-95",
+      "decorator": "after:absolute after:bottom-0 after:right-0 after:w-4 after:h-4 after:bg-[#FF003C] after:block"
+    },
+    "response_card": {
+      "classes": "bg-[#0a0a0a]/90 backdrop-blur-md border border-[#FCEE0A]/30 p-6 relative mt-6",
+      "corners": "before:absolute before:top-0 before:left-0 before:w-2 before:h-2 before:bg-[#FCEE0A] after:absolute after:bottom-0 after:right-0 after:w-2 after:h-2 after:bg-[#FCEE0A]",
+      "text": "font-['JetBrains_Mono'] text-sm text-[#00F0FF] leading-relaxed whitespace-pre-wrap"
+    },
+    "settings_icon": {
+      "classes": "absolute top-4 right-4 text-[#00F0FF] hover:text-[#FFFFFF] transition-colors hover:rotate-90 duration-300 z-50 p-2"
+    },
+    "loading_state": {
+      "classes": "font-['JetBrains_Mono'] text-[#FF003C] animate-pulse flex flex-col items-center gap-4 text-center p-8 border border-[#FF003C]/20 bg-[#FF003C]/5"
+    }
+  },
+  "visual_effects": {
+    "css_glitch": ".glitch { position: relative; color: #FCEE0A; text-shadow: 0 0 5px currentColor; animation: glitch 1s infinite; } .glitch::before, .glitch::after { content: attr(data-text); position: absolute; top: 0; left: 0; width: 100%; overflow: hidden; } .glitch::before { left: 2px; text-shadow: -2px 0 #FF003C; animation: glitch-before 0.5s infinite linear alternate-reverse; clip: rect(0, 0, 0, 0); } .glitch::after { left: -2px; text-shadow: -2px 0 #00F0FF; animation: glitch-after 0.5s infinite linear alternate-reverse; clip: rect(0, 0, 0, 0); } @keyframes glitch { 0%, 100% { transform: skew(0deg); } 20% { transform: skew(-5deg); } 40% { transform: skew(5deg); } } @keyframes glitch-before { 0% { clip: rect(10px, 9999px, 50px, 0); } 100% { clip: rect(30px, 9999px, 80px, 0); } } @keyframes glitch-after { 0% { clip: rect(20px, 9999px, 60px, 0); } 100% { clip: rect(40px, 9999px, 90px, 0); } }",
+    "cyberpunk_grid_bg_css": ".bg-cyber-grid { background-size: 40px 40px; background-image: linear-gradient(to right, rgba(255, 0, 60, 0.1) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 0, 60, 0.1) 1px, transparent 1px); }"
+  },
+  "media": {
+    "background_image": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/871e2c1c-4cb0-4f27-be16-9296bc19b609/images/f0309dd17faf6c13dbfe7c3b7853969ca74c8e62f0c9dac4e4443649a47d298b.png",
+      "category": "hero_background",
+      "description": "Deep void black base with subtle glowing neon yellow and red grid lines."
+    },
+    "glitch_texture": {
+      "url": "https://static.prod-images.emergentagent.com/jobs/871e2c1c-4cb0-4f27-be16-9296bc19b609/images/b94951a46d350a5d055c8658000ec7b04bc4f7a7c30c8d93ffe6926281560b4e.png",
+      "category": "overlay_texture",
+      "description": "Abstract dark glitch art texture for blending over backgrounds."
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. Setup Fonts: In index.html, import 'Orbitron' and 'JetBrains Mono' from Google Fonts (e.g., <link href=\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Orbitron:wght@400;700;900&display=swap\" rel=\"stylesheet\">).",
+    "2. Global CSS: Inject the exact 'css_glitch' and 'cyberpunk_grid_bg_css' snippets provided in 'visual_effects' into /app/frontend/src/index.css.",
+    "3. Tailwind Config: Do NOT rely on arbitrary values. Ensure colors (cyberpunk-yellow: #FCEE0A, neon-red: #FF003C, neon-cyan: #00F0FF) are correctly mapped if needed, or just use the exact hex codes directly in the classes.",
+    "4. Layout Structure: Use a mobile-first container wrapper `min-h-screen bg-[#050505] text-white relative overflow-hidden flex flex-col`. Apply the generated background_image URL via inline style or standard img tag with `opacity-20` and `object-cover` absolute behind all content, OR use the `.bg-cyber-grid` class if the image fails.",
+    "5. Header: The H1 MUST be 'NIGHT CITY ASSISTANT'. CRITICAL: You must add `className=\"glitch ...\"` and the exact attribute `data-text=\"NIGHT CITY ASSISTANT\"` to the H1 element for the CSS pseudo-element glitch effect to function. Use Orbitron font.",
+    "6. Camera Button: Build a massive, highly visible circular button. Use `<label>` wrapped around `<input type=\"file\" accept=\"image/*\" capture=\"environment\" className=\"hidden\" />`. Style the label with the 'camera_button' classes. Include a secondary ghost button beneath it for 'Upload Screenshot' (without capture flag).",
+    "7. Image Preview & Action: Once an image is loaded, show a square-cropped preview with hard borders (`border-2 border-[#00F0FF]`). Beneath it, render the massive solid 'Get Hint' action_button with the #FCEE0A background.",
+    "8. Loading State: Display 'ESTABLISHING SECURE CONNECTION...' or 'DECRYPTING...' using 'loading_state' classes when waiting for Claude API. Make it feel like an immersive terminal boot sequence.",
+    "9. Response Card: Display the hint inside a highly technical bounding box. Use the 'response_card' and 'corners' pseudo-classes to emulate a HUD frame. The text MUST be JetBrains Mono, color #00F0FF.",
+    "10. Settings Dialog: In the top right corner, use lucide-react Settings icon with 'settings_icon' classes. Clicking it should open a completely un-styled, purely HTML/Tailwind modal (or Shadcn stripped of default styles). The modal should have a void black background, neon red borders, and JetBrains mono text for configuring API keys or prompt settings.",
+    "11. Testing IDs: Assign data-testid to critical elements: 'camera-input', 'gallery-input', 'get-hint-btn', 'settings-btn', 'response-container', 'loading-indicator'."
+  ]
+}
