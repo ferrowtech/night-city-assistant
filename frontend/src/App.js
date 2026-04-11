@@ -80,7 +80,7 @@ function App() {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language]);
+  }, [imageData, language, loadingMessages]);
 
   const generateShareImage = useCallback(() => {
     return new Promise((resolve) => {
