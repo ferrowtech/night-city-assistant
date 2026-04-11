@@ -1,0 +1,29 @@
+[build]
+  command = "yarn build"
+  publish = "build"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# Redirect /api/* to Netlify Functions
+[[redirects]]
+  from = "/api/analyze"
+  to = "/.netlify/functions/analyze"
+  status = 200
+
+[[redirects]]
+  from = "/api/history"
+  to = "/.netlify/functions/history"
+  status = 200
+
+[[redirects]]
+  from = "/api"
+  to = "/.netlify/functions/health"
+  status = 200
+
+# SPA fallback - must be last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
