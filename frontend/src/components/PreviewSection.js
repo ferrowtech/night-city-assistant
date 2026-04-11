@@ -1,6 +1,23 @@
 import { Loader2, Trash2 } from "lucide-react";
 import { ICON_LOADING, ICON_ACTION } from "@/constants";
 
+const textareaStyle = {
+  width: "100%",
+  padding: "0.75rem",
+  background: "#0a0a0a",
+  border: "1px solid rgba(252, 238, 10, 0.4)",
+  color: "#FCEE0A",
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: "0.8rem",
+  resize: "none",
+  outline: "none",
+  boxSizing: "border-box",
+  borderRadius: "0",
+  WebkitAppearance: "none",
+  MozAppearance: "none",
+  appearance: "none",
+};
+
 export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, loading, lang, onGetHint, onClear }) {
   return (
     <div className="preview-section" data-testid="preview-section">
@@ -11,15 +28,6 @@ export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, l
         <div className="corner-bl" />
         <div className="corner-br" />
       </div>
-      <textarea
-        data-testid="user-question-input"
-        className="user-question-input"
-        value={userQuestion}
-        onChange={(e) => onQuestionChange(e.target.value)}
-        placeholder={lang.questionPlaceholder}
-        rows={2}
-        disabled={loading}
-      />
       <div className="flex gap-3 w-full">
         <button
           data-testid="get-hint-btn"
@@ -38,6 +46,15 @@ export function PreviewSection({ imagePreview, userQuestion, onQuestionChange, l
           <Trash2 size={ICON_ACTION} />
         </button>
       </div>
+      <textarea
+        data-testid="user-question-input"
+        style={textareaStyle}
+        value={userQuestion}
+        onChange={(e) => onQuestionChange(e.target.value)}
+        placeholder={lang.questionPlaceholder}
+        rows={2}
+        disabled={loading}
+      />
     </div>
   );
 }
