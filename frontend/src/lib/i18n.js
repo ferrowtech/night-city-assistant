@@ -26,6 +26,11 @@ const t = {
     budgetError: "BUDGET EXCEEDED // Please top up your API key balance.",
     connectionError: "CONNECTION LOST // Failed to reach Night City servers. Try again, choom.",
     rateLimitError: "Daily limit reached. Upgrade to premium for unlimited access.",
+    promoPlaceholder: "Enter promo code...",
+    promoApply: "APPLY",
+    promoActivated: "PREMIUM ACTIVATED",
+    promoInvalid: "Invalid code",
+    promoLabel: "PROMO CODE:",
     loading: [
       "ESTABLISHING SECURE CONNECTION...",
       "DECRYPTING NIGHT CITY DATA...",
@@ -61,6 +66,11 @@ const t = {
     budgetError: "БЮДЖЕТ ИСЧЕРПАН // Пополните баланс API ключа.",
     connectionError: "СОЕДИНЕНИЕ ПОТЕРЯНО // Не удалось связаться с серверами Найт-Сити. Попробуйте снова, чумба.",
     rateLimitError: "Дневной лимит исчерпан. Перейдите на премиум для безлимитного доступа.",
+    promoPlaceholder: "Введите промокод...",
+    promoApply: "АКТИВИРОВАТЬ",
+    promoActivated: "ПРЕМИУМ АКТИВИРОВАН",
+    promoInvalid: "Неверный код",
+    promoLabel: "ПРОМОКОД:",
     loading: [
       "УСТАНОВКА ЗАЩИЩЁННОГО СОЕДИНЕНИЯ...",
       "РАСШИФРОВКА ДАННЫХ НАЙТ-СИТИ...",

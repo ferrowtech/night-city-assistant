@@ -20,6 +20,8 @@ function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [language, setLanguage] = useState("en");
   const [sharing, setSharing] = useState(false);
+  const [promoCode, setPromoCode] = useState(() => localStorage.getItem("nc_promo") || "");
+  const isPremium = promoCode === "NIGHTCITY2077";
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
 
@@ -63,6 +65,7 @@ function App() {
         mime_type: "image/jpeg",
         language,
         user_question: userQuestion || "",
+        promo_code: promoCode,
       });
       setHint(res.data.hint);
     } catch (err) {
@@ -80,7 +83,7 @@ function App() {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language, lang]);
+  }, [imageData, language, lang, promoCode]);
 
   const getHint = useCallback(() => {
     sendToAPI("");
@@ -108,6 +111,11 @@ function App() {
     setLanguage((prev) => (prev === "ru" ? "en" : "ru"));
   }, []);
 
+  const handlePromoActivate = useCallback((code) => {
+    localStorage.setItem("nc_promo", code);
+    setPromoCode(code);
+  }, []);
+
   return (
     <div className="app-container bg-cyber-grid" data-testid="app-container">
       <div className="bg-overlay" />
@@ -130,6 +138,8 @@ function App() {
           onToggleLanguage={toggleLanguage}
           settingsOpen={settingsOpen}
           onSettingsChange={setSettingsOpen}
+          isPremium={isPremium}
+          onPromoActivate={handlePromoActivate}
         />
       </header>
 

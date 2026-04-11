@@ -156,27 +156,33 @@ async function storeInMongo(id, hint, language, timestamp) {
   }
 }
 
+const VALID_PROMO_CODES = ["NIGHTCITY2077"];
+
 exports.handler = async (event) => {
   const validationError = validateRequest(event);
   if (validationError) return validationError;
 
-  const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
-    || event.headers["client-ip"]
-    || "unknown";
-
-  if (!checkRateLimit(clientIp)) {
-    return jsonResponse(HTTP_TOO_MANY_REQUESTS, {
-      detail: "Daily limit reached. Upgrade to premium for unlimited access.",
-    });
-  }
-
   const body = parseBody(event);
   if (!body) return jsonResponse(400, { detail: "Invalid JSON body" });
 
-  const { image_base64, language = "en", user_question = "" } = body;
+  const { image_base64, language = "en", user_question = "", promo_code = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
-  console.log("[analyze] language:", language, "| image:", image_base64.length, "chars");
+  const hasPremium = VALID_PROMO_CODES.includes(promo_code);
+
+  if (!hasPremium) {
+    const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
+      || event.headers["client-ip"]
+      || "unknown";
+
+    if (!checkRateLimit(clientIp)) {
+      return jsonResponse(HTTP_TOO_MANY_REQUESTS, {
+        detail: "Daily limit reached. Upgrade to premium for unlimited access.",
+      });
+    }
+  }
+
+  console.log("[analyze] language:", language, "| premium:", hasPremium, "| image:", image_base64.length, "chars");
 
   try {
     const kb = await fetchKnowledgeBase();
