@@ -342,7 +342,7 @@ function App() {
               <div className="camera-btn-inner">
                 <Camera size={48} className="text-[#FF003C] group-hover:scale-110 transition-transform" />
                 <span className="font-['JetBrains_Mono'] text-xs text-[#FF003C] uppercase tracking-wider mt-1">
-                  Capture
+                  {language === "ru" ? "Снимок" : "Capture"}
                 </span>
               </div>
             </label>
@@ -359,7 +359,7 @@ function App() {
               />
               <Upload size={16} className="text-[#00F0FF]" />
               <span className="font-['JetBrains_Mono'] text-xs text-[#00F0FF] uppercase tracking-wider">
-                Upload Screenshot
+                {language === "ru" ? "Загрузить скриншот" : "Upload Screenshot"}
               </span>
             </label>
           </div>
