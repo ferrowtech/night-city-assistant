@@ -168,6 +168,22 @@ code {
 ::-webkit-scrollbar {
   width: 4px;
 }
+
+/* Nuclear removal of any injected badges */
+#emergent-badge,
+[href*="emergent.sh"],
+[id*="emergent"],
+[class*="emergent"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  position: absolute !important;
+  pointer-events: none !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+}
 ::-webkit-scrollbar-track {
   background: #050505;
 }
