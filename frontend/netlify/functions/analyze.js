@@ -2,7 +2,7 @@ const OpenAI = require("openai");
 
 const EMERGENT_PROXY_URL = "https://integrations.emergentagent.com/llm";
 const KNOWLEDGE_BASE_URL =
-  "https://raw.githubusercontent.com/ferrowtech/cyberpunk/main/cyberpunk_2077_knowledge_base.json";
+  "https://raw.githubusercontent.com/ferrowtech/cyberpunk-knowledge-base/refs/heads/main/cyberpunk_2077_knowledge_base.json";
 const HTTP_PAYMENT_REQUIRED = 402;
 
 let knowledgeBaseCache = null;

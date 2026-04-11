@@ -5,6 +5,10 @@
 
 [functions]
   node_bundler = "esbuild"
+  external_node_modules = ["openai"]
+
+[functions."analyze"]
+  timeout = 60
 
 # Redirect /api/* to Netlify Functions
 [[redirects]]
