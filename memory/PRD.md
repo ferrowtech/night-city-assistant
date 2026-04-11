@@ -1,7 +1,7 @@
 # Night City Assistant - PRD
 
 ## Original Problem Statement
-Build a mobile-first web app called "Night City Assistant" - an AI gaming companion for Cyberpunk 2077 with dark cyberpunk UI, camera/gallery upload, Claude API integration with knowledge base, and Russian language tips.
+Build a mobile-first web app called "Night City Assistant" - an AI gaming companion for Cyberpunk 2077 with dark cyberpunk UI, camera/gallery upload, Claude API integration with knowledge base, and multilingual tips.
 
 ## Architecture
 - **Frontend**: React + Tailwind + Shadcn UI (single-page mobile-first)
@@ -10,26 +10,19 @@ Build a mobile-first web app called "Night City Assistant" - an AI gaming compan
 
 ## User Personas
 - Cyberpunk 2077 players seeking gameplay tips via screenshots
-- Russian-speaking gaming community
-
-## Core Requirements
-- [x] Dark cyberpunk UI with glitch title, neon yellow/red accents, grid background
-- [x] Camera capture + gallery upload for screenshots
-- [x] AI analysis via Claude with knowledge base context
-- [x] Russian language tips output
-- [x] Settings dialog with system info
-- [x] Loading states with immersive terminal text
-- [x] "Made with Emergent" badge hidden
+- Russian and English-speaking gaming communities
 
 ## What's Been Implemented (Feb 2026)
-- Full single-screen UI with Orbitron/JetBrains Mono fonts, glitch CSS effects
-- Camera and gallery file inputs
-- Backend /api/analyze endpoint with knowledge base fetch + cache
-- Claude Sonnet integration responding in Russian
-- MongoDB storage of analysis history
+- Full cyberpunk UI with Orbitron/JetBrains Mono, glitch effects, grid background
+- Camera capture + gallery upload
+- Claude Sonnet integration with knowledge base from GitHub
+- Language toggle (RU/EN) — tips delivered in selected language
+- Share Hint — generates styled 1080x1080 cyberpunk PNG card, uses Web Share API or download fallback
 - Settings dialog, loading animations, response card with HUD styling
+- MongoDB history storage
+- "Made with Emergent" badge hidden
 
 ## Prioritized Backlog
 - P1: Chat history view (past analyses)
-- P2: Multiple language support toggle
-- P3: Share hint as image feature
+- P2: Prompt customization in settings
+- P3: Multiple screenshot comparison
