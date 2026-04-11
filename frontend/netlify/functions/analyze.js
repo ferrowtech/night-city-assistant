@@ -2,8 +2,28 @@ const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const KNOWLEDGE_BASE_URL =
   "https://raw.githubusercontent.com/ferrowtech/cyberpunk-knowledge-base/refs/heads/main/cyberpunk_2077_knowledge_base.json";
 const HTTP_PAYMENT_REQUIRED = 402;
+const DAILY_LIMIT = 10;
+const HTTP_TOO_MANY_REQUESTS = 429;
 
 let knowledgeBaseCache = null;
+
+// In-memory rate limiter (persists across warm invocations)
+const rateLimitMap = {};
+
+function checkRateLimit(ip) {
+  const today = new Date().toISOString().slice(0, 10);
+  const key = `${ip}:${today}`;
+
+  // Clean old entries
+  for (const k of Object.keys(rateLimitMap)) {
+    if (!k.endsWith(today)) delete rateLimitMap[k];
+  }
+
+  const count = rateLimitMap[key] || 0;
+  if (count >= DAILY_LIMIT) return false;
+  rateLimitMap[key] = count + 1;
+  return true;
+}
 
 async function fetchKnowledgeBase() {
   if (knowledgeBaseCache) return knowledgeBaseCache;
@@ -139,6 +159,16 @@ async function storeInMongo(id, hint, language, timestamp) {
 exports.handler = async (event) => {
   const validationError = validateRequest(event);
   if (validationError) return validationError;
+
+  const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
+    || event.headers["client-ip"]
+    || "unknown";
+
+  if (!checkRateLimit(clientIp)) {
+    return jsonResponse(HTTP_TOO_MANY_REQUESTS, {
+      detail: "Daily limit reached. Upgrade to premium for unlimited access.",
+    });
+  }
 
   const body = parseBody(event);
   if (!body) return jsonResponse(400, { detail: "Invalid JSON body" });
