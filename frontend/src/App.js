@@ -23,6 +23,7 @@ function App() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [language, setLanguage] = useState("en");
   const [sharing, setSharing] = useState(false);
+  const [userQuestion, setUserQuestion] = useState("");
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
   const shareCanvasRef = useRef(null);
@@ -91,7 +92,7 @@ function App() {
       clearInterval(interval);
       setLoading(false);
     }
-  }, [imageData, language, loadingMessages]);
+  }, [imageData, language, loadingMessages, userQuestion]);
 
   const generateShareImage = useCallback(() => {
     return new Promise((resolve) => {
@@ -372,6 +373,15 @@ function App() {
               <div className="corner-bl" />
               <div className="corner-br" />
             </div>
+            <textarea
+              data-testid="user-question-input"
+              className="user-question-input"
+              value={userQuestion}
+              onChange={(e) => setUserQuestion(e.target.value)}
+              placeholder="Задайте вопрос или добавьте контекст..."
+              rows={2}
+              disabled={loading}
+            />
             <div className="flex gap-3 w-full">
               <button
                 data-testid="get-hint-btn"

@@ -78,7 +78,7 @@ exports.handler = async (event) => {
     };
   }
 
-  const { image_base64, language = "en" } = body;
+  const { image_base64, language = "en", user_question = "" } = body;
   if (!image_base64) {
     return {
       statusCode: 400,
@@ -97,6 +97,11 @@ exports.handler = async (event) => {
       baseURL: EMERGENT_PROXY_URL,
     });
 
+    let userText = "Analyze this Cyberpunk 2077 screenshot and give me a gameplay tip.";
+    if (user_question) {
+      userText += ` User's question: ${user_question}`;
+    }
+
     const response = await client.chat.completions.create({
       model: "claude-sonnet-4-20250514",
       messages: [
@@ -106,7 +111,7 @@ exports.handler = async (event) => {
           content: [
             {
               type: "text",
-              text: "Analyze this Cyberpunk 2077 screenshot and give me a gameplay tip.",
+              text: userText,
             },
             {
               type: "image_url",

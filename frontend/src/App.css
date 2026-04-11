@@ -113,6 +113,33 @@
 
 .crosshair-bottom-right {
   position: absolute;
+
+/* User Question Input */
+.user-question-input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(10, 10, 10, 0.9);
+  border: 1px solid rgba(0, 240, 255, 0.25);
+  color: #00F0FF;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  resize: none;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.user-question-input::placeholder {
+  color: rgba(0, 240, 255, 0.35);
+}
+
+.user-question-input:focus {
+  border-color: #00F0FF;
+}
+
+.user-question-input:disabled {
+  opacity: 0.5;
+}
+
   bottom: 4.5rem;
   right: 2rem;
 }

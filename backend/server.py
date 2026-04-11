@@ -68,6 +68,7 @@ class AnalyzeRequest(BaseModel):
     image_base64: str
     mime_type: Optional[str] = "image/jpeg"
     language: Optional[str] = "ru"
+    user_question: Optional[str] = ""
 
 
 class AnalyzeResponse(BaseModel):
@@ -102,8 +103,12 @@ async def analyze_screenshot(request: AnalyzeRequest):
 
     image_content = ImageContent(image_base64=request.image_base64)
 
+    user_text = "Analyze this Cyberpunk 2077 screenshot and give me a gameplay tip."
+    if request.user_question:
+        user_text += f" User's question: {request.user_question}"
+
     user_message = UserMessage(
-        text="Analyze this Cyberpunk 2077 screenshot and give me a gameplay tip.",
+        text=user_text,
         file_contents=[image_content],
     )
 
