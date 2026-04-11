@@ -236,7 +236,7 @@ function App() {
       {/* Header */}
       <header className="app-header">
         <h1
-          className="glitch font-['Orbitron'] text-4xl sm:text-5xl font-bold text-center text-[#FCEE0A] tracking-widest uppercase"
+          className="glitch font-['Orbitron'] text-2xl sm:text-3xl font-bold text-center text-[#FCEE0A] tracking-widest uppercase"
           data-text="NIGHT CITY ASSISTANT"
           data-testid="app-title"
         >
