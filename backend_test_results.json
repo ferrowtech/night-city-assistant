@@ -1,7 +1,7 @@
 {
   "summary": {
-    "total_tests": 5,
-    "passed_tests": 5,
+    "total_tests": 7,
+    "passed_tests": 7,
     "failed_tests": 0,
     "success_rate": 100.0
   },
@@ -10,32 +10,44 @@
       "test": "Root API Endpoint",
       "success": true,
       "details": "Status: 200, Message: Night City Assistant API",
-      "timestamp": "2026-04-11T11:01:05.418768"
+      "timestamp": "2026-04-11T11:12:30.289818"
     },
     {
       "test": "Analyze Endpoint - Invalid Data",
       "success": true,
       "details": "Correctly rejected invalid data with status 422",
-      "timestamp": "2026-04-11T11:01:05.527454"
+      "timestamp": "2026-04-11T11:12:30.393038"
     },
     {
-      "test": "Analyze Endpoint - Valid Image",
+      "test": "Analyze Endpoint - Valid Image (Default RU)",
       "success": true,
-      "details": "Status: 200, Hint length: 498 chars",
-      "timestamp": "2026-04-11T11:01:11.278494"
+      "details": "Status: 200, Hint length: 414 chars",
+      "timestamp": "2026-04-11T11:12:36.082517"
+    },
+    {
+      "test": "Analyze Endpoint - Russian Language",
+      "success": true,
+      "details": "Status: 200, Hint length: 443 chars, Language: RU",
+      "timestamp": "2026-04-11T11:12:40.825636"
+    },
+    {
+      "test": "Analyze Endpoint - English Language",
+      "success": true,
+      "details": "Status: 200, Hint length: 517 chars, Language: EN",
+      "timestamp": "2026-04-11T11:12:45.018458"
     },
     {
       "test": "History Endpoint",
       "success": true,
-      "details": "Status: 200, Items: 2",
-      "timestamp": "2026-04-11T11:01:11.411189"
+      "details": "Status: 200, Items: 7",
+      "timestamp": "2026-04-11T11:12:45.132561"
     },
     {
       "test": "CORS Headers",
       "success": true,
       "details": "CORS configured: {'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS, HEAD, PATCH', 'Access-Control-Allow-Headers': '*'}",
-      "timestamp": "2026-04-11T11:01:11.478639"
+      "timestamp": "2026-04-11T11:12:45.201093"
     }
   ],
-  "timestamp": "2026-04-11T11:01:11.479640"
+  "timestamp": "2026-04-11T11:12:45.202054"
 }

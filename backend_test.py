@@ -104,7 +104,7 @@ class NightCityAPITester:
             self.log_test("Analyze Endpoint - Invalid Data", False, f"Error: {str(e)}")
 
     def test_analyze_endpoint_valid_image(self):
-        """Test analyze endpoint with valid image data"""
+        """Test analyze endpoint with valid image data (default Russian)"""
         try:
             test_image_b64 = self.create_test_image_base64()
             
@@ -126,23 +126,109 @@ class NightCityAPITester:
                 
                 if all(field in data for field in required_fields):
                     hint_length = len(data.get("hint", ""))
-                    self.log_test("Analyze Endpoint - Valid Image", True, 
+                    self.log_test("Analyze Endpoint - Valid Image (Default RU)", True, 
                                 f"Status: {response.status_code}, Hint length: {hint_length} chars")
                 else:
                     missing_fields = [f for f in required_fields if f not in data]
-                    self.log_test("Analyze Endpoint - Valid Image", False, 
+                    self.log_test("Analyze Endpoint - Valid Image (Default RU)", False, 
                                 f"Missing fields: {missing_fields}")
             else:
                 try:
                     error_data = response.json()
-                    self.log_test("Analyze Endpoint - Valid Image", False, 
+                    self.log_test("Analyze Endpoint - Valid Image (Default RU)", False, 
                                 f"Status: {response.status_code}, Error: {error_data}")
                 except:
-                    self.log_test("Analyze Endpoint - Valid Image", False, 
+                    self.log_test("Analyze Endpoint - Valid Image (Default RU)", False, 
                                 f"Status: {response.status_code}, Response: {response.text[:200]}")
                 
         except Exception as e:
-            self.log_test("Analyze Endpoint - Valid Image", False, f"Error: {str(e)}")
+            self.log_test("Analyze Endpoint - Valid Image (Default RU)", False, f"Error: {str(e)}")
+
+    def test_analyze_endpoint_russian_language(self):
+        """Test analyze endpoint with explicit Russian language parameter"""
+        try:
+            test_image_b64 = self.create_test_image_base64()
+            
+            payload = {
+                "image_base64": test_image_b64,
+                "mime_type": "image/jpeg",
+                "language": "ru"
+            }
+            
+            response = requests.post(
+                f"{self.api_url}/analyze",
+                json=payload,
+                headers={"Content-Type": "application/json"},
+                timeout=60
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                required_fields = ["id", "hint", "timestamp"]
+                
+                if all(field in data for field in required_fields):
+                    hint = data.get("hint", "")
+                    hint_length = len(hint)
+                    self.log_test("Analyze Endpoint - Russian Language", True, 
+                                f"Status: {response.status_code}, Hint length: {hint_length} chars, Language: RU")
+                else:
+                    missing_fields = [f for f in required_fields if f not in data]
+                    self.log_test("Analyze Endpoint - Russian Language", False, 
+                                f"Missing fields: {missing_fields}")
+            else:
+                try:
+                    error_data = response.json()
+                    self.log_test("Analyze Endpoint - Russian Language", False, 
+                                f"Status: {response.status_code}, Error: {error_data}")
+                except:
+                    self.log_test("Analyze Endpoint - Russian Language", False, 
+                                f"Status: {response.status_code}, Response: {response.text[:200]}")
+                
+        except Exception as e:
+            self.log_test("Analyze Endpoint - Russian Language", False, f"Error: {str(e)}")
+
+    def test_analyze_endpoint_english_language(self):
+        """Test analyze endpoint with English language parameter"""
+        try:
+            test_image_b64 = self.create_test_image_base64()
+            
+            payload = {
+                "image_base64": test_image_b64,
+                "mime_type": "image/jpeg",
+                "language": "en"
+            }
+            
+            response = requests.post(
+                f"{self.api_url}/analyze",
+                json=payload,
+                headers={"Content-Type": "application/json"},
+                timeout=60
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                required_fields = ["id", "hint", "timestamp"]
+                
+                if all(field in data for field in required_fields):
+                    hint = data.get("hint", "")
+                    hint_length = len(hint)
+                    self.log_test("Analyze Endpoint - English Language", True, 
+                                f"Status: {response.status_code}, Hint length: {hint_length} chars, Language: EN")
+                else:
+                    missing_fields = [f for f in required_fields if f not in data]
+                    self.log_test("Analyze Endpoint - English Language", False, 
+                                f"Missing fields: {missing_fields}")
+            else:
+                try:
+                    error_data = response.json()
+                    self.log_test("Analyze Endpoint - English Language", False, 
+                                f"Status: {response.status_code}, Error: {error_data}")
+                except:
+                    self.log_test("Analyze Endpoint - English Language", False, 
+                                f"Status: {response.status_code}, Response: {response.text[:200]}")
+                
+        except Exception as e:
+            self.log_test("Analyze Endpoint - English Language", False, f"Error: {str(e)}")
 
     def test_history_endpoint(self):
         """Test the history endpoint"""
@@ -189,6 +275,8 @@ class NightCityAPITester:
         self.test_root_endpoint()
         self.test_analyze_endpoint_invalid_data()
         self.test_analyze_endpoint_valid_image()
+        self.test_analyze_endpoint_russian_language()
+        self.test_analyze_endpoint_english_language()
         self.test_history_endpoint()
         self.test_cors_headers()
         

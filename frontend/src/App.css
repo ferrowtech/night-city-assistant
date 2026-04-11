@@ -352,7 +352,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-top: 1rem;
   padding: 0.5rem 0.75rem;
   border: 1px solid rgba(0, 240, 255, 0.3);
   background: transparent;
@@ -364,6 +363,47 @@
 .try-again-btn:hover {
   border-color: #00F0FF;
   background: rgba(0, 240, 255, 0.08);
+}
+
+/* Share Hint Button */
+.share-hint-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(252, 238, 10, 0.4);
+  background: transparent;
+  color: #FCEE0A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.share-hint-btn:hover:not(:disabled) {
+  border-color: #FCEE0A;
+  background: rgba(252, 238, 10, 0.08);
+}
+
+.share-hint-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Language Toggle Button */
+.lang-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 0.35rem 0.6rem;
+  border: 1px solid rgba(252, 238, 10, 0.4);
+  background: rgba(252, 238, 10, 0.05);
+  color: #FCEE0A;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+  border-color: #FCEE0A;
+  background: rgba(252, 238, 10, 0.15);
 }
 
 /* Footer */

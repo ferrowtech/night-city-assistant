@@ -53,11 +53,12 @@ async def fetch_knowledge_base():
     return knowledge_base_cache
 
 
-def build_system_prompt(kb_json: str) -> str:
+def build_system_prompt(kb_json: str, language: str = "ru") -> str:
+    lang_instruction = "in Russian" if language == "ru" else "in English"
     return (
         "You are a Cyberpunk 2077 expert assistant with a detailed knowledge base. "
         "Use the provided knowledge base to give accurate tips. "
-        "Analyze the screenshot and give 3-4 sentence tip in Russian. Be specific and concise.\n\n"
+        f"Analyze the screenshot and give 3-4 sentence tip {lang_instruction}. Be specific and concise.\n\n"
         f"<knowledge_base>\n{kb_json}\n</knowledge_base>"
     )
 
@@ -65,6 +66,7 @@ def build_system_prompt(kb_json: str) -> str:
 class AnalyzeRequest(BaseModel):
     image_base64: str
     mime_type: Optional[str] = "image/jpeg"
+    language: Optional[str] = "ru"
 
 
 class AnalyzeResponse(BaseModel):
@@ -86,7 +88,7 @@ async def analyze_screenshot(request: AnalyzeRequest):
         raise Exception("EMERGENT_LLM_KEY not configured")
 
     kb_json = await fetch_knowledge_base()
-    system_prompt = build_system_prompt(kb_json)
+    system_prompt = build_system_prompt(kb_json, request.language or "ru")
 
     session_id = str(uuid.uuid4())
 
@@ -112,6 +114,7 @@ async def analyze_screenshot(request: AnalyzeRequest):
     doc = {
         "id": analysis_id,
         "hint": response,
+        "language": request.language or "ru",
         "timestamp": now,
     }
     await db.analyses.insert_one(doc)
