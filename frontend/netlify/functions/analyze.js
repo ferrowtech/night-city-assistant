@@ -142,14 +142,19 @@ async function callClaudeAPI(apiKey, systemPrompt, mediaType, imageBase64, userQ
   return textBlock?.text || "";
 }
 
-async function storeInMongo(id, hint, language, timestamp) {
+async function storeInMongo(hint, userQuestion, language, timestamp) {
   if (!process.env.MONGO_URL) return;
   try {
     const { MongoClient } = require("mongodb");
     const mongo = new MongoClient(process.env.MONGO_URL);
     await mongo.connect();
-    const db = mongo.db(process.env.DB_NAME || "night_city_assistant");
-    await db.collection("analyses").insertOne({ id, hint, language, timestamp });
+    const db = mongo.db("nightcity");
+    await db.collection("analyses").insertOne({
+      timestamp,
+      user_question: userQuestion,
+      response: hint,
+      language,
+    });
     await mongo.close();
   } catch (_) {
     // non-blocking
@@ -192,7 +197,7 @@ exports.handler = async (event) => {
     const hint = await callClaudeAPI(process.env.ANTHROPIC_API_KEY, systemPrompt, mediaType, image_base64, user_question);
     const id = crypto.randomUUID();
     const timestamp = new Date().toISOString();
-    await storeInMongo(id, hint, language, timestamp);
+    await storeInMongo(hint, user_question, language, timestamp);
 
     return jsonResponse(200, { id, hint, timestamp });
   } catch (err) {
