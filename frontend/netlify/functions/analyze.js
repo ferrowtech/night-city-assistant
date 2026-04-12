@@ -1,6 +1,6 @@
 const ANTHROPIC_API_URL = "https://api.anthropic.com/v1/messages";
 const KNOWLEDGE_BASE_URL =
-  "https://raw.githubusercontent.com/ferrowtech/cyberpunk-knowledge-base/refs/heads/main/cyberpunk_2077_knowledge_base.json";
+  "https://raw.githubusercontent.com/ferrowtech/night-city-assistant/refs/heads/main/cyberpunk_2077_knowledge_base.json";
 const HTTP_PAYMENT_REQUIRED = 402;
 const DAILY_LIMIT = 5;
 const HTTP_TOO_MANY_REQUESTS = 429;

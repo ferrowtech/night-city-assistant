@@ -29,7 +29,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-KNOWLEDGE_BASE_URL = "https://raw.githubusercontent.com/ferrowtech/cyberpunk-knowledge-base/refs/heads/main/cyberpunk_2077_knowledge_base.json"
+KNOWLEDGE_BASE_URL = "https://raw.githubusercontent.com/ferrowtech/night-city-assistant/refs/heads/main/cyberpunk_2077_knowledge_base.json"
 HTTP_PAYMENT_REQUIRED = 402
 knowledge_base_cache = None
 
