@@ -1,0 +1,2850 @@
+{
+  "game": {
+    "title": "Cyberpunk 2077",
+    "setting": "Night City and surrounding regions",
+    "notes": [
+      "This JSON knowledge base is compiled from the uploaded guide files plus consolidated general game knowledge.",
+      "Several uploaded files intended for quests, weapons, cyberware, perks, Night City districts, and main guide pages contained only blocking pages ('Just a moment...' / 'Enable JavaScript and cookies to continue'), so those sections were expanded using stable game knowledge rather than the broken file content.",
+      "Quickhack, build, beginner-tip, and secrets sections are more detailed because the uploaded files contained substantial usable material there."
+    ]
+  },
+  "main_quests": [
+    {
+      "act": "Prologue",
+      "order": 1,
+      "name": "The Streetkid / The Nomad / The Corpo-Rat",
+      "type": "lifepath_intro",
+      "summary": "Short origin-specific opening mission that establishes V's background and initial contacts.",
+      "major_outcomes": [
+        "Determines opening flavour, dialogue options, and a few later lifepath checks.",
+        "Converges into the same core storyline after the montage."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 2,
+      "name": "Practice Makes Perfect",
+      "type": "tutorial",
+      "summary": "Optional combat, stealth, and hacking tutorial with T-Bug.",
+      "major_outcomes": [
+        "Introduces movement, weapons, quickhacks, and basic systems."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 3,
+      "name": "The Rescue",
+      "type": "main_job",
+      "summary": "V and Jackie rescue Sandra Dorsett for Wakako.",
+      "major_outcomes": [
+        "Introduces basic fieldwork loop, scav hideout encounters, and T-Bug support.",
+        "Establishes early relationship with Jackie and Night City fixers."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 4,
+      "name": "The Ripperdoc",
+      "type": "main_job",
+      "summary": "Visit Viktor to install core cyberware and begin V's upgrade path.",
+      "major_outcomes": [
+        "Unlocks major cyberware context and your long-term relationship with Vik."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 5,
+      "name": "The Ride",
+      "type": "main_job",
+      "summary": "Meet Dexter DeShawn and receive the high-profile Konpeki Plaza job.",
+      "major_outcomes": [
+        "Introduces Dex, T-Bug, and the setup for the heist."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 6,
+      "name": "The Information",
+      "type": "main_job",
+      "summary": "Meet Evelyn Parker, evaluate the Relic plan, and prepare for Konpeki Plaza.",
+      "major_outcomes": [
+        "Introduces Evelyn, Judy, Braindance analysis, and Yorinobu Arasaka's suite."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 7,
+      "name": "The Pickup",
+      "type": "main_job",
+      "summary": "Acquire the Flathead from Maelstrom for the heist.",
+      "major_outcomes": [
+        "Multiple outcomes depending on choices involving Royce, Militech, and Meredith Stout.",
+        "One of the earliest missions with notable branching consequences."
+      ]
+    },
+    {
+      "act": "Prologue",
+      "order": 8,
+      "name": "The Heist",
+      "type": "main_job",
+      "summary": "Steal the Relic from Konpeki Plaza with Jackie.",
+      "major_outcomes": [
+        "Major turning point of the game.",
+        "Leads directly to the Relic crisis and collapse of the original plan."
+      ]
+    },
+    {
+      "act": "Interlude",
+      "order": 9,
+      "name": "Love Like Fire",
+      "type": "interlude",
+      "summary": "Playable Johnny Silverhand flashback.",
+      "major_outcomes": [
+        "Introduces Johnny as a central narrative force."
+      ]
+    },
+    {
+      "act": "Interlude",
+      "order": 10,
+      "name": "Playing for Time",
+      "type": "main_job",
+      "summary": "V survives the aftermath of the heist and wakes up with Johnny in their head.",
+      "major_outcomes": [
+        "Begins the race to stop the Relic from killing V.",
+        "Opens Act 2 structure."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 11,
+      "name": "Automatic Love",
+      "type": "main_job",
+      "summary": "Search for Evelyn Parker via Lizzie's Bar and Clouds.",
+      "major_outcomes": [
+        "Starts Judy/Evelyn investigation branch.",
+        "Leads into the search through Jig-Jig Street and the dollhouse network."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 12,
+      "name": "The Space in Between",
+      "type": "main_job",
+      "summary": "Follow the trail from Clouds to Fingers and beyond.",
+      "major_outcomes": [
+        "Pushes the Evelyn investigation toward the XBD underworld."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 13,
+      "name": "Disasterpiece",
+      "type": "main_job",
+      "summary": "Work with Judy to locate Evelyn in a scav operation.",
+      "major_outcomes": [
+        "Rescues Evelyn.",
+        "Deepens Judy's storyline."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 14,
+      "name": "Double Life",
+      "type": "main_job",
+      "summary": "Analyze Evelyn's memories to identify the Voodoo Boys connection.",
+      "major_outcomes": [
+        "Points V toward Pacifica and the Voodoo Boys."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 15,
+      "name": "M'ap Tann Pelen",
+      "type": "main_job",
+      "summary": "Enter Pacifica and contact Placide/Voodoo Boys.",
+      "major_outcomes": [
+        "Begins the Pacifica branch leading to Alt Cunningham and Netwatch conflict."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 16,
+      "name": "I Walk the Line",
+      "type": "main_job",
+      "summary": "Investigate the GIM and deal with the Netwatch agent situation.",
+      "major_outcomes": [
+        "Choice-heavy moment influencing Voodoo Boys / Netwatch dynamics."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 17,
+      "name": "Transmission",
+      "type": "main_job",
+      "summary": "Cross the Blackwall path toward Alt Cunningham.",
+      "major_outcomes": [
+        "Major lore mission about the Blackwall, Alt, and Johnny's past."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 18,
+      "name": "Ghost Town",
+      "type": "main_job",
+      "summary": "Work with Rogue and Panam to get Hellman.",
+      "major_outcomes": [
+        "Begins Panam's major storyline and the Aldecaldos arc.",
+        "Leads toward confronting Arasaka's Relic knowledge."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 19,
+      "name": "Lightning Breaks",
+      "type": "main_job",
+      "summary": "Steal the Basilisk-related convoy target and pursue Hellman.",
+      "major_outcomes": [
+        "Builds trust with Panam.",
+        "Transitions into capture/interrogation of Hellman."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 20,
+      "name": "Life During Wartime",
+      "type": "main_job",
+      "summary": "Rescue Anders Hellman from the crash site.",
+      "major_outcomes": [
+        "Reveal of Relic-related technical truths.",
+        "Strengthens Panam relationship path."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 21,
+      "name": "Down on the Street",
+      "type": "main_job",
+      "summary": "Meet Takemura and begin investigating Arasaka from another angle.",
+      "major_outcomes": [
+        "Starts Takemura/Hanako branch."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 22,
+      "name": "Gimme Danger",
+      "type": "main_job",
+      "summary": "Infiltration and reconnaissance mission for the Arasaka parade plan.",
+      "major_outcomes": [
+        "Prepares the Hanako contact attempt."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 23,
+      "name": "Play It Safe",
+      "type": "main_job",
+      "summary": "Protect the Arasaka parade route and reach Hanako.",
+      "major_outcomes": [
+        "Important confrontation with Arasaka security and Oda.",
+        "Secures direct contact with Hanako."
+      ]
+    },
+    {
+      "act": "Act 2",
+      "order": 24,
+      "name": "Search and Destroy",
+      "type": "main_job",
+      "summary": "After meeting Hanako, V and Takemura face an Arasaka assault.",
+      "major_outcomes": [
+        "High-impact survival mission.",
+        "Can determine Takemura's fate if the player returns to save him."
+      ]
+    },
+    {
+      "act": "Act 3",
+      "order": 25,
+      "name": "Tapeworm",
+      "type": "main_job",
+      "summary": "Series of Johnny conversations after key branch missions.",
+      "major_outcomes": [
+        "Shapes V/Johnny relationship and philosophical direction."
+      ]
+    },
+    {
+      "act": "Act 3",
+      "order": 26,
+      "name": "Nocturne OP55N1",
+      "type": "point_of_no_return",
+      "summary": "Meet Hanako at Embers and commit to the final act.",
+      "major_outcomes": [
+        "Locks the point of no return.",
+        "Determines access to ending routes based on prior choices and side quest completion."
+      ]
+    }
+  ],
+  "ending_routes": [
+    {
+      "name": "Where Is My Mind?",
+      "route_trigger": "Accept Hanako's plan / Arasaka route",
+      "summary": "Corporate ending centred on Arasaka, Mikoshi, and a clinical fate for V."
+    },
+    {
+      "name": "All Along the Watchtower",
+      "route_trigger": "Ask Panam and the Aldecaldos for help",
+      "summary": "Nomad ending with the Basilisk assault and possible hopeful departure from Night City."
+    },
+    {
+      "name": "For Whom the Bell Tolls / Knockin' on Heaven's Door",
+      "route_trigger": "Assault Arasaka Tower with Rogue and Johnny",
+      "summary": "Johnny/Rogue route leading to the Sun or Temperance outcomes."
+    },
+    {
+      "name": "Path of Least Resistance",
+      "route_trigger": "Give up on the rooftop",
+      "summary": "Tragic self-determined ending."
+    },
+    {
+      "name": "Don't Fear the Reaper",
+      "route_trigger": "Secret ending route unlocked by specific Johnny affinity dialogue path",
+      "summary": "Solo assault on Arasaka Tower; one of the hardest and most celebrated finales."
+    }
+  ],
+  "weapons": {
+    "overview": {
+      "weapon_technologies": [
+        {
+          "name": "Power",
+          "class": "ranged",
+          "characteristics": [
+            "conventional firearms using traditional ammo",
+            "default 5% ricochet chance",
+            "often support muzzle and scope slots",
+            "fully automatic variants usually have high rate of fire and high recoil"
+          ]
+        },
+        {
+          "name": "Smart",
+          "class": "ranged",
+          "characteristics": [
+            "guided caseless ammo with target tracking",
+            "requires Smart Link cyberware for smart-targeting",
+            "bullets can curve around obstacles but fly slower than conventional rounds",
+            "Tyger Claws dermal imprint can jam smart-targeting and cause a flat miss chance"
+          ]
+        },
+        {
+          "name": "Tech",
+          "class": "ranged",
+          "characteristics": [
+            "railgun-based weapons using electromagnetic charge",
+            "can be charged",
+            "charged shots can penetrate cover and obstacles",
+            "usually cannot equip suppressors but most accept custom sights"
+          ]
+        },
+        {
+          "name": "Blade",
+          "class": "melee",
+          "characteristics": [
+            "fast, sharp, lethal",
+            "suited to stealth and executions"
+          ],
+          "examples": [
+            "Katanas",
+            "Machetes",
+            "Mantis Blades"
+          ]
+        },
+        {
+          "name": "Blunt",
+          "class": "melee",
+          "characteristics": [
+            "heavy, slow, generally non-lethal",
+            "focused on brute force",
+            "can stun"
+          ],
+          "examples": [
+            "Hammers",
+            "Clubs",
+            "Gorilla Arms",
+            "Bare fists"
+          ]
+        },
+        {
+          "name": "Throwable",
+          "class": "melee",
+          "characteristics": [
+            "introduced with Patch 2.0",
+            "can be thrown as projectiles",
+            "automatically return after recovery period",
+            "recover instantly if picked up in melee range"
+          ]
+        }
+      ],
+      "general_rules": {
+        "ammo_sharing_examples": {
+          "pistols": "Handgun Ammo shared with revolvers and SMGs",
+          "assault_rifles": "Heavy Ammo shared with light machine guns and precision rifles"
+        },
+        "non_lethal_note": "Enemies can be incapacitated instead of killed by non-lethal weapons, and lethal weapons can also become non-lethal with the Pax modification."
+      }
+    },
+    "main_types": [
+      {
+        "type": "Pistols",
+        "role": "dependable sidearms",
+        "range_profile": "short to medium",
+        "traits": [
+          "average damage",
+          "average capacity",
+          "usable while driving"
+        ]
+      },
+      {
+        "type": "Revolvers",
+        "role": "high-impact sidearms",
+        "range_profile": "short to medium",
+        "traits": [
+          "shared handgun ammo",
+          "typically harder-hitting than pistols"
+        ]
+      },
+      {
+        "type": "SMGs",
+        "role": "close-range automatic weapons",
+        "range_profile": "short",
+        "traits": [
+          "high rate of fire",
+          "shared handgun ammo",
+          "good mobility"
+        ]
+      },
+      {
+        "type": "Assault Rifles",
+        "role": "general-purpose rifles",
+        "range_profile": "short to long except extreme range",
+        "traits": [
+          "all-round performance",
+          "often full-auto",
+          "shared heavy ammo"
+        ]
+      },
+      {
+        "type": "Precision Rifles",
+        "role": "mid-long range accuracy weapons",
+        "range_profile": "medium to long",
+        "traits": [
+          "shared heavy ammo",
+          "more precise than assault rifles"
+        ]
+      },
+      {
+        "type": "Sniper Rifles",
+        "role": "long-range elimination",
+        "range_profile": "long",
+        "traits": [
+          "high single-shot damage",
+          "suited to overwatch"
+        ]
+      },
+      {
+        "type": "Shotguns",
+        "role": "burst damage and stagger",
+        "range_profile": "close",
+        "traits": [
+          "high stopping power",
+          "effective in CQB"
+        ]
+      },
+      {
+        "type": "Light Machine Guns",
+        "role": "sustained suppressive fire",
+        "range_profile": "medium",
+        "traits": [
+          "shared heavy ammo",
+          "large magazines",
+          "suppression-focused"
+        ]
+      },
+      {
+        "type": "Heavy Machine Guns",
+        "role": "very high sustained firepower",
+        "range_profile": "medium",
+        "traits": [
+          "extreme suppressive output",
+          "bulky/heavy use cases"
+        ]
+      },
+      {
+        "type": "Grenades",
+        "role": "utility and explosive throwables",
+        "range_profile": "thrown",
+        "traits": [
+          "frag",
+          "biohaz",
+          "incendiary",
+          "EMP",
+          "recon",
+          "smoke",
+          "flashbang variants"
+        ]
+      },
+      {
+        "type": "Melee Weapons",
+        "role": "close-quarters combat",
+        "range_profile": "melee",
+        "traits": [
+          "split into blade, blunt and throwable families"
+        ]
+      },
+      {
+        "type": "Miscellaneous Weapons",
+        "role": "special-purpose outliers",
+        "range_profile": "varies",
+        "traits": [
+          "includes odd/special weapon entries such as Budget Arms CRISP-er and Techtronika T40 Uragan"
+        ]
+      }
+    ],
+    "notable_model_examples": {
+      "pistols": [
+        "A-22B Chao",
+        "HJKE-11 Yukimura",
+        "JKE-X2 Kenshin",
+        "Kappa",
+        "Liberty",
+        "Malorian Arms 3516",
+        "M-10AF Lexington",
+        "M-76e Omaha",
+        "Nue",
+        "Slaught-O-Matic",
+        "Tamayura",
+        "Unity"
+      ],
+      "assault_rifles": [
+        "D5 Sidewinder",
+        "DA8 Umbra",
+        "HJSH-18 Masamune",
+        "Nowaki",
+        "Militech M251s Ajax",
+        "Nokota D5 Copperhead"
+      ],
+      "iconic_examples": [
+        "Ogou",
+        "Genjiroh",
+        "Skippy",
+        "Apparition",
+        "Chaos",
+        "Kongou",
+        "Plan B",
+        "Pride",
+        "Seraph",
+        "Dying Night",
+        "Lizzie",
+        "Death and Taxes",
+        "La Chingona Dorada",
+        "Her Majesty"
+      ]
+    }
+  },
+  "cyberware": {
+    "overview": {
+      "quality_tiers": [
+        {
+          "tier": 1,
+          "available_from_level": 1
+        },
+        {
+          "tier": 2,
+          "available_from_level": 10
+        },
+        {
+          "tier": 3,
+          "available_from_level": 20
+        },
+        {
+          "tier": 4,
+          "available_from_level": 30
+        },
+        {
+          "tier": 5,
+          "available_from_level": 40
+        }
+      ],
+      "installation_and_upgrading": {
+        "install_locations": [
+          "Ripperdocs",
+          "loot sources for some items",
+          "Dogtown airdrops for specific iconic cyberware"
+        ],
+        "upgrade_rule": "Cyberware can be upgraded using Item Components at Ripperdocs."
+      },
+      "full_body_conversion_achievement_rule": "Installing at least one cyberware item in every one of the 10 slot types unlocks Full Body Conversion."
+    },
+    "categories": [
+      {
+        "category": "Frontal Cortex",
+        "slots": 3,
+        "purpose": "RAM, quickhack support, cyberware cooldown and utility management",
+        "example_items": [
+          {
+            "name": "Axolotl",
+            "tier": "Tier 4 / Iconic",
+            "capacity": 48,
+            "effect": "instantly reduces all cyberware cooldowns after neutralizing an enemy"
+          },
+          {
+            "name": "Bioconductor",
+            "tier": "Tier 1",
+            "capacity": 16,
+            "effect": "allows quickhacks to crit; grants quickhack crit chance at a RAM penalty"
+          },
+          {
+            "name": "COX-2 Cybersomatic Optimizer",
+            "tier": "Tier 3 / Iconic",
+            "capacity": 50,
+            "effect": "allows quickhacks to crit with very high quickhack crit chance at RAM penalty"
+          },
+          {
+            "name": "Camillo RAM Manager",
+            "tier": "Tier 4",
+            "capacity": 8,
+            "effect": "instantly recovers a percentage of max RAM when RAM falls below a threshold"
+          },
+          {
+            "name": "Ex-Disk",
+            "tier": "Tier 3",
+            "capacity": 10,
+            "effect": "increases Max RAM and quickhack upload speed"
+          }
+        ]
+      },
+      {
+        "category": "Operating System",
+        "slots": 1,
+        "purpose": "defines core combat playstyle",
+        "types": [
+          {
+            "type": "Cyberdeck",
+            "description": "allows quickhacks on targets and devices while scanning",
+            "notable_variants": [
+              "Militech Canto",
+              "Tetratronic Rippler",
+              "NetWatch Netdriver",
+              "Arasaka Shadow",
+              "Militech Paraline",
+              "Raven Microcyber",
+              "Biotech Σ"
+            ]
+          },
+          {
+            "type": "Sandevistan",
+            "description": "slows time for everyone but the user; supports stealth and burst combat",
+            "notable_variants": [
+              "Militech Apogee",
+              "Militech Falcon",
+              "Dynalar Sandevistan",
+              "Zetatech Sandevistan",
+              "QianT Warp Dancer"
+            ],
+            "example_effects": [
+              "time slow",
+              "crit chance bonuses",
+              "crit damage bonuses"
+            ]
+          },
+          {
+            "type": "Berserk",
+            "description": "enhances offensive and physical capabilities, grants damage reduction, and prevents dropping below 25% health while active",
+            "notable_variants": [
+              "Militech Berserk",
+              "BioDyne Berserk",
+              "Zetatech Berserk",
+              "Moore Tech Berserk"
+            ],
+            "extra_note": "after Berserk ends, the user restores max health per enemy neutralized"
+          },
+          {
+            "type": "Chrome Compressor",
+            "description": "listed as the exception to the three main OS families on the cyberware page"
+          }
+        ]
+      },
+      {
+        "category": "Arms",
+        "slots": 1,
+        "purpose": "replaces standard arm weapon capability",
+        "items": [
+          {
+            "name": "Gorilla Arms",
+            "effect": "more physical melee damage; 10-20% bleed chance; increases Body checks by 1-6 according to wiki note"
+          },
+          {
+            "name": "Mantis Blades",
+            "effect": "fast slashing attacks, leap attack, physical damage, 10-20% bleed chance"
+          },
+          {
+            "name": "Monowire",
+            "effect": "physical damage in melee and short-range combat; can upload a Control quickhack on charged hits if Jailbreak Relic perk is unlocked"
+          },
+          {
+            "name": "Projectile Launch System",
+            "effect": "arm-mounted projectile launcher family"
+          },
+          {
+            "name": "Damage variants",
+            "effect": "electrifying, thermal and toxic variants exist for Gorilla Arms, Mantis Blades, Monowire and Projectile Launch System"
+          }
+        ]
+      },
+      {
+        "category": "Face",
+        "slots": 1,
+        "extra_unlock": "2nd slot unlocked during Birds with Broken Wings",
+        "purpose": "facial and optical support cyberware"
+      },
+      {
+        "category": "Skeleton",
+        "slots": 2,
+        "extra_unlock": "3rd slot unlocked with License To Chrome",
+        "purpose": "carry capacity, armor and structural body bonuses"
+      },
+      {
+        "category": "Hands",
+        "slots": 1,
+        "extra_unlock": "2nd slot unlocked with Ambidextrous",
+        "purpose": "weapon interaction and accuracy mods",
+        "notable_example": {
+          "name": "Ballistic Coprocessor",
+          "effect": "raises Power weapon ricochet chance from 5% to 100% and increases ricochet damage at higher tiers"
+        }
+      },
+      {
+        "category": "Nervous System",
+        "slots": 3,
+        "purpose": "time dilation, reaction speed and evasion support"
+      },
+      {
+        "category": "Circulatory System",
+        "slots": 3,
+        "purpose": "health recovery, survivability and combat sustain"
+      },
+      {
+        "category": "Integumentary System",
+        "slots": 3,
+        "purpose": "armor, resistances and skin-based defense layers"
+      },
+      {
+        "category": "Legs",
+        "slots": 1,
+        "purpose": "mobility and jump upgrades"
+      }
+    ]
+  },
+  "perks": {
+    "attribute_trees": {
+      "Body": [
+        "Adrenaline Rush",
+        "Aftershock",
+        "Army Of One",
+        "Bloodlust",
+        "Breakthrough",
+        "Bullet Ballet",
+        "Calm Mind",
+        "Clapback",
+        "Close-Quarters Carnage",
+        "Comeback Kid",
+        "Die! Die! Die!",
+        "Don't Stop Me Now",
+        "Dorph-Head",
+        "Dread",
+        "Epicenter",
+        "Finisher: Savage Sling",
+        "Fly Swatter",
+        "Fury Road",
+        "Juggernaut",
+        "Kinetic Absorption",
+        "Like A Feather",
+        "Onslaught"
+      ],
+      "Reflexes": [
+        "Aerial Acrobat",
+        "Aerodynamic",
+        "Air Dash",
+        "Air Kerenzikov",
+        "Bullet Deflect",
+        "Bullet Time",
+        "Can't Touch This",
+        "Dash",
+        "Finisher: Bladerunner",
+        "Flash And Thunderclap",
+        "Flash Of Steel",
+        "Going The Distance",
+        "Gundancer",
+        "Lead And Steel",
+        "Mad Dash",
+        "Mean Streak",
+        "Mind Over Matter",
+        "Multitasker",
+        "Muscle Memory",
+        "Opportunist",
+        "Parkour!",
+        "Power Slide",
+        "Practice Makes Perfect",
+        "Ready, Rested, Reloaded",
+        "Salt In The Wound",
+        "Seeing Double",
+        "Sharpshooter",
+        "Shoot To Chill",
+        "Slaughterhouse",
+        "Slippery",
+        "Spice Of Life",
+        "Spray And Pray",
+        "Steady Grip",
+        "Stuntjock",
+        "Submachine Fun",
+        "Tailwind",
+        "Tunnel Vision"
+      ],
+      "Technical Ability": [
+        "All Things Cyber",
+        "Ambidextrous",
+        "Bolt",
+        "Borrowed Time",
+        "Built Different",
+        "Burn This City",
+        "Chain Lightning",
+        "Chipware Connoisseur",
+        "Chrome Constitution",
+        "Coming In Hot",
+        "Cyborg",
+        "Demolitions Surplus",
+        "Doomlauncher",
+        "Driver Update",
+        "Edgerunner",
+        "Extended Warranty",
+        "Field Medic",
+        "First Aid",
+        "Flash Sale",
+        "Friendlier Fire",
+        "Gearhead",
+        "Glutton For War",
+        "Health Freak",
+        "Heat Shield",
+        "In Charge",
+        "Internal Clock",
+        "License To Chrome",
+        "Lightning Storm",
+        "Lucky Day",
+        "Pyromania",
+        "Renaissance Punk",
+        "Shock Value",
+        "Ticking Time Bomb",
+        "Transfusion"
+      ],
+      "Intelligence": [
+        "Acquisition Specialist",
+        "Blood Daemon",
+        "Carhacker",
+        "Copy-Paste",
+        "Counter-A-Hack",
+        "Data Recycler",
+        "Embedded Exploit",
+        "Encryption",
+        "Eye In The Sky",
+        "Feedback Loop",
+        "Finisher: Live Wire",
+        "Forcekill Cypher",
+        "Hack Queue",
+        "Icepick",
+        "No Escape",
+        "Optimization",
+        "Overclock",
+        "Power Surge",
+        "Precision Subroutines",
+        "Proximate Propagation",
+        "Queue Acceleration",
+        "Queue Hack Root",
+        "Queue Mastery",
+        "Queue Prioritization",
+        "Race Against Mind",
+        "Recirculation",
+        "Shadowrunner",
+        "Siphon",
+        "Smart Synergy",
+        "Speculation",
+        "Spillover",
+        "Sublimation",
+        "Subordination",
+        "System Overwhelm",
+        "Target Lock Transfer",
+        "Targeting Prism",
+        "Terminal Velocity",
+        "Warning: Explosion Hazard"
+      ],
+      "Cool": [
+        "Accelerated Toxin Absorption",
+        "Blind Spot",
+        "California Reaper",
+        "Corrosion",
+        "Creeping Death",
+        "Deadeye",
+        "Deep Breath",
+        "Feline Footwork",
+        "Finisher: Act Of Mercy",
+        "Focus",
+        "Gag Order",
+        "Head To Head",
+        "High Noon",
+        "Juggler",
+        "Killer Instinct",
+        "Long Shot",
+        "Nerves Of Tungsten-Steel",
+        "Neurotoxin",
+        "Ninjutsu",
+        "No Sweat",
+        "Parasite",
+        "Pay It Forward",
+        "Pounce",
+        "Pull!",
+        "Quick Draw",
+        "Quick Getaway",
+        "Rinse And Reload",
+        "Road Warrior",
+        "Run 'N' Gun",
+        "Scorpion Sting",
+        "Serpentine",
+        "Shinobi Sprint",
+        "Sleight Of Hand",
+        "Small Target",
+        "Style Over Substance",
+        "Unexposed",
+        "Vanishing Act"
+      ],
+      "Relic": [
+        "Data Tunneling",
+        "Emergency Cloaking",
+        "Jailbreak",
+        "Launch Capacity Override",
+        "Limiter Removal",
+        "Machine Learning",
+        "Sensory Protocol",
+        "Spatial Mapping",
+        "Vulnerability Analytics"
+      ]
+    }
+  },
+  "night_city": {
+    "districts": [
+      {
+        "name": "City Center",
+        "type": "major district",
+        "description": "Night City's central business district and biggest commercial hub; by 2077 it is the most fortified district and the clearest showcase of megacorporate power.",
+        "known_subdistricts": [
+          "Corpo Plaza",
+          "Downtown"
+        ]
+      },
+      {
+        "name": "Heywood",
+        "type": "major district",
+        "description": "A district of stark contrasts: modern skyscrapers and parks in the north, dangerous and inhospitable slums in the south. It is described as the 'biggest bedroom in Night City' and is contested by Valentinos and 6th Street.",
+        "known_subdistricts": [
+          "The Glen",
+          "Vista del Rey",
+          "Wellsprings"
+        ]
+      },
+      {
+        "name": "Pacifica",
+        "type": "major district / combat zone",
+        "description": "One of Night City's major districts and also a combat zone in 2077. The gigs page shows Pacifica content spanning West Wind Estate, Coastview and Dogtown.",
+        "known_subdistricts": [
+          "Coastview",
+          "West Wind Estate",
+          "Dogtown"
+        ]
+      },
+      {
+        "name": "Santo Domingo",
+        "type": "major district",
+        "description": "One of Night City's oldest districts. It avoided the worst of the Fourth Corporate War and became an industrial hub dominated by enterprises, manufacturing and power plants; it is marked by strong contrasts between megabuildings, factories and suburban-style housing.",
+        "known_subdistricts": [
+          "Arroyo",
+          "Rancho Coronado"
+        ]
+      },
+      {
+        "name": "Watson",
+        "type": "major district",
+        "description": "Northern district of Night City. Its subdistricts on Cyberpunk Wiki include corporate waterfront, dense urban neighborhoods and industrial areas.",
+        "known_subdistricts": [
+          "Arasaka Waterfront",
+          "Kabuki",
+          "Little China",
+          "Northside"
+        ]
+      },
+      {
+        "name": "Westbrook",
+        "type": "major district",
+        "description": "District associated with wealth, celebrities and corporate elites. Search snippets identify it as home to Japantown and the exclusive residential enclave of North Oak.",
+        "known_subdistricts": [
+          "Charter Hill",
+          "Japantown",
+          "North Oak"
+        ]
+      }
+    ],
+    "notable_subdistrict_profiles": [
+      {
+        "name": "North Oak",
+        "district": "Westbrook",
+        "description": "The newest and richest part of Night City: an exclusive residential district of vast estates, tight private security and elite residents ranging from corporate owners to celebrities."
+      },
+      {
+        "name": "Arasaka Waterfront",
+        "district": "Watson",
+        "description": "A port and corporate enclave in northern Watson; described as the bulwarked island of corporate authority in the otherwise lawless district."
+      },
+      {
+        "name": "Rancho Coronado",
+        "district": "Santo Domingo",
+        "description": "A suburban-style worker neighborhood on the city's edge, built to house employees of nearby factories and later associated with middle and higher-ranking corporate workers."
+      }
+    ]
+  },
+  "quickhacks_and_netrunning": {
+    "overview": "This section is unusually detailed because the uploaded files contained extensive quickhack and build notes.",
+    "core_setup": {
+      "requirements": [
+        "Install a Cyberdeck at a Ripperdoc.",
+        "Slot quickhacks into the deck.",
+        "Use the scanner/quickhack overlay to target devices or enemies."
+      ],
+      "starter_flow": [
+        "Acquire a better Cyberdeck early if planning a Netrunner build.",
+        "Upgrade deck tiers to unlock stronger and ultimate quickhack access.",
+        "Support RAM economy with Frontal Cortex and healing cyberware."
+      ]
+    },
+    "notable_quickhacks": [
+      {
+        "name": "Ping",
+        "role": "Recon",
+        "best_use": "Reveal enemies/devices through walls, improve information before stealth or smart-weapon engagements.",
+        "notes": [
+          "Untraceable utility pick.",
+          "Very high general usefulness."
+        ]
+      },
+      {
+        "name": "Reboot Optics",
+        "role": "Control/support",
+        "best_use": "Blind targets, enable safer movement and stealth chains.",
+        "notes": [
+          "Useful support piece in stealth combos."
+        ]
+      },
+      {
+        "name": "Sonic Shock",
+        "role": "Stealth support",
+        "best_use": "Silence/isolated stealth takedowns and combo finisher in untraceable kill chains.",
+        "notes": [
+          "Uploaded guide describes Memory Wipe + Reboot Optics + Sonic Shock as a cost-efficient stealth neutralise combo."
+        ]
+      },
+      {
+        "name": "Memory Wipe",
+        "role": "Trace control / stealth",
+        "best_use": "Reduce or prevent tracing and set up untraceable hack chains.",
+        "notes": [
+          "Uploaded guide treats the epic-tier behaviour as especially important for stealth netrunners."
+        ]
+      },
+      {
+        "name": "Contagion",
+        "role": "AOE damage / crowd control",
+        "best_use": "Group fights, especially when combined with burn sources such as Overheat, thermal Monowire, or fire-capable weapons.",
+        "notes": [
+          "One of the best crowd-control hacks in uploaded material."
+        ]
+      },
+      {
+        "name": "Overheat",
+        "role": "Damage over time",
+        "best_use": "Cheap thermal pressure; also detonates Contagion setups for explosive group kills.",
+        "notes": [
+          "Very efficient offensive hack."
+        ]
+      },
+      {
+        "name": "Short Circuit",
+        "role": "Instant electrical burst / support finisher",
+        "best_use": "Pair with Cyberware Malfunction for amplified damage.",
+        "notes": [
+          "Uploaded guides agree it became more support/synergy-centric after updates."
+        ]
+      },
+      {
+        "name": "Cyberware Malfunction",
+        "role": "Support amplifier / boss shredder",
+        "best_use": "Stack on strong enemies, then follow with damage hacks or weapons.",
+        "notes": [
+          "Perhaps the single most important synergy hack in the uploaded guide set."
+        ]
+      },
+      {
+        "name": "Cripple Movement",
+        "role": "Control / boss lockdown",
+        "best_use": "Stop dangerous melee or Sandevistan users; also strong with Monowire finisher setups.",
+        "notes": [
+          "Excellent for controlling bosses and elites."
+        ]
+      },
+      {
+        "name": "Cyberpsychosis",
+        "role": "Chaos / turn enemy into ally",
+        "best_use": "Cast on strongest target in a hostile group.",
+        "notes": [
+          "Effective distraction tool though the affected target may die quickly."
+        ]
+      },
+      {
+        "name": "Synapse Burnout",
+        "role": "Raw single-target damage",
+        "best_use": "High-RAM, Overclock-fuelled deletion of dangerous enemies.",
+        "notes": [
+          "Major offensive quickhack according to uploaded guide ranking."
+        ]
+      },
+      {
+        "name": "Detonate Grenade",
+        "role": "Explosive pickoff",
+        "best_use": "Initiate fights or punish grenade-carrying enemies / clustered groups.",
+        "notes": [
+          "Fun and situational; one uploaded guide rates it lower than other premium hacks, another praises it for combat starts."
+        ]
+      },
+      {
+        "name": "Blackwall Gateway",
+        "role": "Endgame chain-kill ultimate",
+        "best_use": "Late-game Kanto deck setup with Overclock and survival loops.",
+        "notes": [
+          "Highly specialised and missable; among the strongest but most demanding options described in the uploaded guides."
+        ]
+      }
+    ],
+    "build_patterns_from_uploaded_guides": [
+      {
+        "build": "Stealth Netrunner",
+        "core": [
+          "Cyberdeck",
+          "Intelligence perks",
+          "Memory Wipe",
+          "Sonic Shock",
+          "Reboot Optics",
+          "Ping"
+        ],
+        "playstyle": "Avoid traces, isolate targets, neutralise quietly, use recon before entry."
+      },
+      {
+        "build": "Contagion Burner",
+        "core": [
+          "Contagion",
+          "Overheat",
+          "Thermal Monowire or burn-capable weapon",
+          "Raven or spread-friendly deck"
+        ],
+        "playstyle": "Spread poison, trigger combustion, wipe grouped enemies."
+      },
+      {
+        "build": "Boss Control Monowire",
+        "core": [
+          "Cripple Movement",
+          "Monowire",
+          "support healing/RAM cyberware"
+        ],
+        "playstyle": "Pin bosses in place, close distance safely, harvest finishers and resource recovery."
+      },
+      {
+        "build": "Netgunner Hybrid",
+        "core": [
+          "Smart Link",
+          "Smart weapons",
+          "Cyberware Malfunction",
+          "Short Circuit",
+          "Ping"
+        ],
+        "playstyle": "Tag, disrupt, then finish with tracking weapon fire."
+      },
+      {
+        "build": "Blackwall Overclock Loop",
+        "core": [
+          "Kanto cyberdeck",
+          "Blackwall Gateway",
+          "Overclock",
+          "healing cyberware",
+          "cheap filler hacks"
+        ],
+        "playstyle": "Spend health as RAM, chain kills, sustain through healing feedback loops."
+      }
+    ],
+    "acquisition_notes": [
+      "Uploaded guide material says ultimate quickhacks start dropping or become craftable more reliably once you reach high cyberdeck tier progression.",
+      "A Pacifica netrunner farm loop around West Wind Apartments is described in uploaded files as a fast way to collect quickhack drops/specs.",
+      "Netrunner merchants also sell quickhack specs/components, but farming can save large amounts of money."
+    ]
+  },
+  "beginner_tips": {
+    "exploration": [
+      "Interact with blue fast-travel points when you discover them so future traversal gets easier.",
+      "Use the scanner constantly: to tag enemies, find loot, identify explosives, and mark useful objects from a distance.",
+      "Yellow markers over shards or valuables make them easier to spot; keep scanning rooms rather than rushing through them.",
+      "Call your car and use the trunk stash if you need quick storage while overloaded.",
+      "Do not wave weapons around civilians; even drawing or misclicking in crowded spaces can trigger trouble."
+    ],
+    "combat": [
+      "Do the optional tutorials for free XP and a much smoother start.",
+      "Enemies can heal; finish low-health targets before they recover.",
+      "Bosses and tougher mission-ending enemies often provide valuable loot and money, so do not skip cleanup after a fight.",
+      "Jumping, sprinting, sneaking, hacking, and dismantling all help level the styles you actually use; playstyle progression is usage-based.",
+      "Loot every fight, then either sell weapons for money or dismantle them for components depending on your immediate need."
+    ],
+    "build_progression": [
+      "Do not commit every early point into one fantasy build; support what your playstyle is actually doing.",
+      "Body and Technical Ability checks can open doors and alternative routes, so utility investment matters.",
+      "If you want to play hacker, prioritise a stronger operating system/cyberdeck early.",
+      "Street Cred matters because better vendor inventories unlock as it rises.",
+      "Clothing is not just cosmetic; early pieces can provide valuable armor and sometimes mod slots."
+    ],
+    "money_and_farming": [
+      "Collect junk and valuables regularly; the income adds up faster than many new players expect.",
+      "Use Drop Points often to unload excess loot.",
+      "Pacifica enemy loops and certain shoreline loops from the uploaded secrets guide are good for money, XP, and crafting materials.",
+      "Always save before attempting duplication or exploit-style methods."
+    ],
+    "dialogue_and_quests": [
+      "Blue dialogue options usually expand information and are generally safe to explore first.",
+      "Yellow dialogue options tend to advance the conversation or commit to a choice.",
+      "NCPD Scanner Hustles can have follow-up steps nearby; check the Journal if the payout felt too small.",
+      "Autosaves are frequent enough that you can recover from accidental fights or grenade disasters."
+    ]
+  },
+  "secrets_and_special_notes": {
+    "skippy": {
+      "location": "Heywood, south of College St. metro, in a briefcase near a dead body behind an obstacle/gate area.",
+      "mode_choice_note": "Choose Puppy-Loving Pacifist first if you want the later permanent mode swap to head-targeting Stone Cold Killer after 50 kills, according to the uploaded secrets guide."
+    },
+    "discount_secret": {
+      "name": "Charles Bucks permanent ripperdoc discount",
+      "location": "Watson, north of Kabuki Plaza",
+      "result": "Accepting his bribe after uncovering his connection to scav harvesting grants a 20% cyberware discount."
+    },
+    "farming_routes": [
+      {
+        "name": "Pacifica pier loop",
+        "benefits": [
+          "Money",
+          "XP",
+          "Street Cred",
+          "loot/components"
+        ],
+        "notes": "Clear shoreline enemies, drive away and back under the pier to respawn."
+      },
+      {
+        "name": "Pacifica West Wind Apartments netrunner loop",
+        "benefits": [
+          "Quickhacks",
+          "quickhack specs",
+          "weapons/components"
+        ],
+        "notes": "Repeatedly eliminate netrunners around the route for high-value hacking rewards."
+      }
+    ],
+    "exploits_from_uploaded_guides": [
+      "Item duplication at Drop Points was documented in the uploaded IGN secrets text, but it may be patched and can risk save stability.",
+      "The Space Oddity painting exploit was documented for large money gains, but patch status may vary by game version.",
+      "Save-reload rerolling can affect loot rarity and mod slots on fixed loot spawns."
+    ]
+  },
+  "data_quality": {
+    "strongest_sections_from_uploaded_files": [
+      "beginner_tips",
+      "secrets_and_special_notes",
+      "quickhacks_and_netrunning"
+    ],
+    "limited_sections_due_to_broken_uploaded_files": [
+      "main_quests",
+      "weapons baseline lists",
+      "cyberware exhaustive catalogues",
+      "perks exhaustive tree names",
+      "night_city uploaded source pages"
+    ],
+    "broken_files_detected": [
+      "cyberware.txt",
+      "gigs.txt",
+      "main.txt",
+      "night_city.txt",
+      "perks.txt",
+      "quests.txt",
+      "weapons.txt",
+      "fextralife_builds.txt",
+      "fextralife_tips.txt"
+    ],
+    "broken_file_reason": "These files contained blocking/placeholder text rather than guide content.",
+    "section_replacements": {
+      "weapons": "Replaced with newer detailed section from cyberpunk_new_sections.json",
+      "cyberware": "Replaced with newer detailed section from cyberpunk_new_sections.json",
+      "perks": "Replaced with newer detailed section from cyberpunk_new_sections.json",
+      "night_city": "Replaced with newer detailed district section from cyberpunk_new_sections.json",
+      "gigs": "Added from cyberpunk_new_sections.json",
+      "iconic_weapons_phantom_liberty": "Added from Fandom RU, VGTimes, Pure Cyberpunk, IGN. 42 weapons with locations, quests, effects.",
+      "quickhacks_complete": "Added from Cyberpunk Wiki (Fandom). 29 quickhacks with RAM costs, tier effects, synergies.",
+      "iconic_vehicles": "Added from IGN, Shacknews, Fandom, Powerpyx. 15 iconic vehicles with quests, locations, special events."
+    }
+  },
+  "gigs": {
+    "districts": [
+      {
+        "district": "Badlands",
+        "fixer": "Dakota Smith",
+        "gigs": [
+          "Big Pete's Got Big Problems",
+          "Dancing on a Minefield",
+          "Flying Drugs",
+          "Goodbye, Night City",
+          "MIA",
+          "No Fixers",
+          "Sparring Partner",
+          "Trevor's Last Ride",
+          "Radar Love"
+        ]
+      },
+      {
+        "district": "City Center",
+        "fixer": "Dino Dinovic",
+        "gigs": [
+          "A Lack of Empathy",
+          "An Inconvenient Killer",
+          "Guinea Pigs",
+          "Serial Suicide",
+          "The Frolics of Councilwoman Cole"
+        ]
+      },
+      {
+        "district": "Heywood",
+        "fixer": "Sebastian \"Padre\" Ibarra",
+        "special_case": "Hot Merchandise is given by Rogue Amendiares",
+        "gigs": [
+          "Eye for an Eye",
+          "Fifth Column",
+          "Going Up or Down?",
+          "Hot Merchandise",
+          "Jeopardy",
+          "Life's Work",
+          "Old Friends",
+          "On a Tight Leash",
+          "Psychofan",
+          "Sr. Ladrillo's Private Collection",
+          "The Lord Giveth and Taketh Away",
+          "Bring Me the Head of Gustavo Orta"
+        ]
+      },
+      {
+        "district": "Pacifica",
+        "fixer": "Mr. Hands",
+        "gigs": [
+          "Two Wrongs Makes Us Right",
+          "Dogtown Saints",
+          "Prototype in the Scraper",
+          "Treating Symptoms",
+          "Waiting for Dodger",
+          "Spy in the Jungle",
+          "Talent Academy",
+          "The Man Who Killed Jason Foreman",
+          "Heaviest of Hearts",
+          "Roads to Redemption"
+        ]
+      },
+      {
+        "district": "Santo Domingo",
+        "fixer": "Muamar Reyes",
+        "special_case": "The Union Strikes Back is given by Rogue Amendiares",
+        "gigs": [
+          "Breaking News",
+          "Cuckoo's Nest",
+          "Desperate Measures",
+          "Error 404",
+          "Family Matters",
+          "For My Son",
+          "Going-away Party",
+          "Hacking the Hacker",
+          "Nasty Hangover",
+          "Race to the Top",
+          "Serious Side Effects",
+          "Severance Package",
+          "The Union Strikes Back"
+        ]
+      },
+      {
+        "district": "Watson",
+        "fixer": "Regina Jones",
+        "gigs": [
+          "Backs Against the Wall",
+          "Bloodsport",
+          "Catch a Tyger's Toe",
+          "Concrete Cage Trap",
+          "Dirty Biz",
+          "Flight of the Cheetah",
+          "Freedom of the Press",
+          "Last Login",
+          "Lousy Kleppers",
+          "Occupational Hazard",
+          "Scrolls before Swine",
+          "Shark in the Water",
+          "Small Man, Big Evil",
+          "The Heisenberg Principle",
+          "Hippocratic Oath",
+          "Many Ways to Skin a Cat",
+          "Monster Hunt",
+          "Playing for Keeps",
+          "Rite of Passage",
+          "Troublesome Neighbors",
+          "Welcome to America, Comrade",
+          "Woman of La Mancha",
+          "Fixer, Merc, Soldier, Spy"
+        ]
+      },
+      {
+        "district": "Westbrook",
+        "fixer": "Wakako Okada",
+        "special_case": "Family Heirloom is given by Rogue Amendiares",
+        "gigs": [
+          "A Shrine Defiled",
+          "Getting Warmer...",
+          "Greed Never Pays",
+          "Olive Branch",
+          "Tyger and Vulture",
+          "Until Death Do Us Part",
+          "Wakako's Favorite",
+          "We Have Your Wife",
+          "Family Heirloom"
+        ]
+      }
+    ]
+  },
+  "iconic_weapons_phantom_liberty": {
+    "overview": "Культовое оружие из DLC Phantom Liberty (Dogtown/Призрачная свобода). Все предметы уникальны, масштабируются до уровня игрока при получении.",
+    "response_template": "Когда игрок спрашивает об оружии — давай: 1) чем уникально, 2) против кого лучше, 3) где/как получить",
+    "sources": [
+      "cyberpunk.fandom.com/ru",
+      "vgtimes.ru",
+      "cyberpunk.puredmg.com",
+      "ign.com/wikis/cyberpunk-2077"
+    ],
+    "weapons": [
+      {
+        "name_ru": "Агау",
+        "name_en": "Agaou",
+        "type": "Умный пистолет",
+        "tech": "Smart",
+        "unique_effect": "Выпускает два разрывных снаряда с повышенным шансом расчленения. При расчленении — кровотечение и бонус к крит. шансу.",
+        "best_against": "Группы врагов, незащищённые цели",
+        "how_to_get": "Заказ «Лечим симптомы» (Treating Symptoms) — уничтожить роботов",
+        "quest": "Treating Symptoms (гиг, Dogtown)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Алабай",
+        "name_en": "Alabai",
+        "type": "Стандартный дробовик",
+        "tech": "Power",
+        "unique_effect": "Серия Techtronica. Поджигает врагов. Попадание по горящему — всегда крит. Чем больше горящих врагов, тем выше крит-урон, но ниже точность.",
+        "best_against": "Группы врагов в ближнем бою, цели без огнестойкости",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне. Также у вендора Herold Lowe в стадионе EBM Petrochem (патч 2.1).",
+        "quest": "Airdrops / вендор",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Амстафф",
+        "name_en": "Amstaff",
+        "type": "Стандартный дробовик",
+        "tech": "Power",
+        "unique_effect": "Повышает скорость передвижения после убийства и расчленения. Пробивание брони. Чем быстрее движешься — тем больше урон.",
+        "best_against": "Враги с бронёй, цели в движении",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне",
+        "quest": "Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Антилох",
+        "name_en": "Antilope",
+        "type": "Двуручная дубинка",
+        "tech": "Power",
+        "unique_effect": "Повышает вероятность крит. попадания с каждой атакой в комбо.",
+        "best_against": "Любые враги — лучше в затяжных комбо",
+        "how_to_get": "Побочный квест «Нимфа» (Nymph) — связан с NPC Лина Малина",
+        "quest": "Нимфа (Nymph)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Белоголовый орлан",
+        "name_en": "Bald Eagle",
+        "type": "Стандартный револьвер",
+        "tech": "Power",
+        "unique_effect": "Работает в паре с ножом Потрошитель: выстрел в ногу врага, искалеченного Потрошителем, разрывает её на куски. Потрошитель возвращается в руку. Эффективен против движущихся врагов.",
+        "best_against": "Движущиеся враги, пары с ножом Потрошитель",
+        "how_to_get": "Снять с Курта Хансена в основном квесте «Поджигатель» (Firestarter) — путь помощи Риду",
+        "quest": "Firestarter (основной квест, путь Help Reed)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Борзая",
+        "name_en": "Borzaya / Greyhound",
+        "type": "Стандартная снайперская винтовка",
+        "tech": "Power",
+        "unique_effect": "Серия Techtronica. Поджигает врагов. Попадание по горящему — всегда крит. Больше горящих — выше крит, ниже точность.",
+        "best_against": "Одиночные цели на дистанции, поджог + добивание",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне",
+        "quest": "Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Бродячий пёс",
+        "name_en": "Stray Dog / Wild Dog",
+        "type": "Стандартный лёгкий пулемёт",
+        "tech": "Power",
+        "unique_effect": "Повышает скорострельность и крит-шанс при каждом попадании. При пустом магазине — быстрая ближняя атака наносит огромный урон.",
+        "best_against": "Группы врагов, затяжные перестрелки",
+        "how_to_get": "Снять с Курта Хансена в основном квесте «Поджигатель» (Firestarter) — путь помощи Риду",
+        "quest": "Firestarter (основной квест, путь Help Reed)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Волкодав",
+        "name_en": "Volkodav",
+        "type": "Мачете",
+        "tech": "Power",
+        "unique_effect": "Серия Techtronica. Поджигает врагов. Попадание по горящему — всегда крит.",
+        "best_against": "Враги в ближнем бою, поджог + добивание",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне",
+        "quest": "Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Гвинблейдд",
+        "name_en": "Gwynbleidd",
+        "type": "Меч",
+        "tech": "Power",
+        "unique_effect": "Серебряный меч Ведьмака (коллаборация). Уникальный дизайн, высокий урон, бонус к атакам в движении.",
+        "best_against": "Ближний бой, быстрые враги",
+        "how_to_get": "Особый способ получения — связан с квестом или событием коллаборации",
+        "quest": "Ведьмак-коллаборация",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Геркулес 3АХ",
+        "name_en": "Hercules 3AX",
+        "type": "Умная штурмовая винтовка",
+        "tech": "Smart",
+        "unique_effect": "+50% урон в голову, +25% пробитие брони, +20% шанс отравить. По отравленным врагам чаще проходит крит. Убитые враги взрываются и наносят урон соседям.",
+        "best_against": "Группы врагов, кибер-усиленные противники",
+        "how_to_get": "Квест «Дорога к искуплению» (Roads to Redemption) — в оружейной комнате рядом с бомбой",
+        "quest": "Roads to Redemption (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Гри-гри",
+        "name_en": "Gris-Gris",
+        "type": "Электромагнитный (Tech) револьвер",
+        "tech": "Tech",
+        "unique_effect": "Tech-тип, электрические снаряды. Может оглушать врагов.",
+        "best_against": "Роботы, дроны, кибер-модифицированные враги",
+        "how_to_get": "Убежище Слайдера — нужен ключ-карта из гига «Лечим симптомы» (Treating Symptoms). Посетить ДО миссии с Ридом «The Damned».",
+        "quest": "Treating Symptoms (гиг) + The Damned (основной квест)",
+        "location": "Dogtown — убежище Слайдера",
+        "important_note": "Ключ-карта исчезает после прохода с Ридом — взять оружие нужно заранее"
+      },
+      {
+        "name_ru": "Дезертир",
+        "name_en": "Deserter / Dezerter",
+        "type": "Стандартный дробовик",
+        "tech": "Power",
+        "unique_effect": "Двустволка с очень высоким урона за залп.",
+        "best_against": "Ближний бой, мощный первый удар",
+        "how_to_get": "Квест «Человек, убивший Джейсона Формана» (The Man Who Killed Jason Foreman) — направить пистолет на Риндера и получить ключ от тайника",
+        "quest": "The Man Who Killed Jason Foreman (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Её Величество",
+        "name_en": "Her Majesty",
+        "type": "Стандартный пистолет",
+        "tech": "Power",
+        "unique_effect": "+200% урон в голову, +50% пробитие брони, уменьшенная отдача, разрывные пули задевают нескольких врагов.",
+        "best_against": "Точные выстрелы в голову, незащищённые цели",
+        "how_to_get": "Алекс выдаёт в начале основного квеста «Держись вместе» (Get It Together)",
+        "quest": "Get It Together (основной квест)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Закон Мёрфи",
+        "name_en": "Murphy's Law",
+        "type": "Одноручная дубинка",
+        "tech": "Power",
+        "unique_effect": "Высокий урон, хаотичный стиль. Дропает с солдат Курта Хансена.",
+        "best_against": "Ближний бой, любые враги",
+        "how_to_get": "Дроп с одного из солдат Курта Хансена во время квеста «Поджигатель» (Firestarter)",
+        "quest": "Firestarter (основной квест)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Искра",
+        "name_en": "Sparky",
+        "type": "Стандартная снайперская винтовка",
+        "tech": "Power",
+        "unique_effect": "Power-снайпер с высоким уроном за выстрел. Уникальный электрический эффект.",
+        "best_against": "Одиночные цели на дальней дистанции",
+        "how_to_get": "Преступная активность у точки быстрого перемещения Terra Cognita в Догтауне. Убить босса — оружие в правой части здания внутри.",
+        "quest": "Преступная активность НЦПД (нужен файл из сейфхауса Алекс для появления на карте)",
+        "location": "Dogtown, у Terra Cognita fast travel",
+        "tips": "3 зоны преступной активности не отображаются на карте пока не возьмёшь файл в сейфхаусе под баром Алекс"
+      },
+      {
+        "name_ru": "Кармен",
+        "name_en": "Carmen",
+        "type": "Стандартная штурмовая винтовка",
+        "tech": "Power",
+        "unique_effect": "Сбалансированный огонь, хорошая скорострельность и урон.",
+        "best_against": "Универсальное оружие, средняя дистанция",
+        "how_to_get": "Гиг «Шары к стене» (Balls to the Wall) — убедить Пако уйти через диалог",
+        "quest": "Balls to the Wall (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Клык",
+        "name_en": "Fang",
+        "type": "Нож",
+        "tech": "Power",
+        "unique_effect": "+50% урон в голову, +30% шанс кровотечения. Удары по одному месту наносят всё больший урон.",
+        "best_against": "Стелс-убийства, точные удары",
+        "how_to_get": "Курт Хансен бросает нож в начале встречи в квесте «Поджигатель» (Firestarter) — путь помощи Риду. Просто подобрать с пола.",
+        "quest": "Firestarter (основной квест, путь Help Reed)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Лайка",
+        "name_en": "Laika",
+        "type": "Электромагнитный (Tech) револьвер",
+        "tech": "Tech",
+        "unique_effect": "Tech-тип с электрическими зарядными выстрелами.",
+        "best_against": "Роботы, дроны, кибер-усиленные враги",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне. Также у вендора Herold Lowe в стадионе EBM Petrochem (патч 2.1).",
+        "quest": "Airdrops / вендор",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Манцинелла",
+        "name_en": "Mancinella",
+        "type": "Стандартный револьвер",
+        "tech": "Power",
+        "unique_effect": "+200% урон в голову, +25% пробитие брони, попадание в голову может отравить. В начале боя враги несколько секунд не видят игрока.",
+        "best_against": "Стелс-открытие боя, враги без хим-защиты",
+        "how_to_get": "Мистер Хэндс выдаёт в начале основного квеста «Управляй этим городом» (Run This Town) — открывается после Firestarter",
+        "quest": "Run This Town (основной квест)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "НДИ Оспри",
+        "name_en": "NDI Osprey",
+        "type": "Стандартная снайперская винтовка",
+        "tech": "Power",
+        "unique_effect": "Высокоточная снайперская винтовка с уменьшенной отдачей.",
+        "best_against": "Одиночные цели на большой дистанции",
+        "how_to_get": "Квест «Птицы со сломанными крыльями» (Birds With Broken Wings) — в оружейной комнате сейфхауса Алекс (слева у входа)",
+        "quest": "Birds With Broken Wings (основной квест)",
+        "location": "Сейфхаус Алекс, Dogtown"
+      },
+      {
+        "name_ru": "Огун (топор)",
+        "name_en": "Agaou",
+        "name_note": "ВАЖНО: В Phantom Liberty есть ДВА разных оружия с похожими именами. Agaou (Агау) — топор. Ogou (Огун) — умный пистолет. Это разные предметы с разными способами получения.",
+        "type": "Топор (метательный)",
+        "tech": "Power",
+        "unique_effect": "Крит при броске = электрическая ударная волна по нескольким врагам. +125% урон в голову. +25% пробитие брони. +30% шанс электрошока. Бросок бесшумный — подходит для стелса.",
+        "best_against": "Группы врагов (волна), роботы и дроны (электро-урон), элитники и боссы (прерывает атаки), стелс-подходы",
+        "how_to_get": "Преступная активность (Increased Criminal Activity) у точки быстрого перемещения Luxor High Wellness Spa в Догтауне. Убить босса Айо Зарин — лидера вудуистов.",
+        "quest": "Преступная активность НЦПД — не основной и не побочный квест",
+        "location": "Dogtown, у Luxor High Wellness Spa",
+        "tips": "Нет слотов для модов — вкладывайся в атрибуты персонажа. Комбо с Vulnerability Analytics повышает крит-шанс для волны."
+      },
+      {
+        "name_ru": "Огун (пистолет)",
+        "name_en": "Ogou",
+        "name_note": "ВАЖНО: Не путать с топором Agaou. Ogou (Огун) — умный пистолет. Получается в другом месте.",
+        "type": "Умный пистолет",
+        "tech": "Smart",
+        "unique_effect": "Smart-наведение с отслеживающими снарядами. Уникальные эффекты при попаданиях.",
+        "best_against": "Движущиеся враги, любые цели на средней дистанции",
+        "how_to_get": "Гиг «Лечим симптомы» (Treating Symptoms) — снять с босса-робота Robot R Mk.2 после победы.",
+        "quest": "Treating Symptoms (гиг, Dogtown)",
+        "location": "Dogtown — локация гига Treating Symptoms"
+      },
+      {
+        "name_ru": "Опора",
+        "name_en": "Ol' Reliable",
+        "type": "Стандартный револьвер",
+        "tech": "Power",
+        "unique_effect": "Надёжный, высокий урон за выстрел.",
+        "best_against": "Одиночные цели на средней дистанции",
+        "how_to_get": "Квест «Под огнём с обеих сторон» (Shot by Both Sides) — дать Бри погибнуть",
+        "quest": "Shot by Both Sides (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Пария",
+        "name_en": "Pariah",
+        "type": "Электромагнитный (Tech) пистолет",
+        "tech": "Tech",
+        "unique_effect": "Tech-пистолет с зарядными пробивающими выстрелами.",
+        "best_against": "Враги за укрытием, бронированные цели",
+        "how_to_get": "Рид даёт в конце квеста «Певчая птица» (Songbird) — если выполнить желание Сонгбёрд",
+        "quest": "Songbird (основной квест, путь Help Songbird)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Питбуль",
+        "name_en": "Pit Bull",
+        "type": "Стандартная штурмовая винтовка",
+        "tech": "Power",
+        "unique_effect": "Высокая скорострельность, стабильный урон. Нужна для получения Амстафф через airdrops.",
+        "best_against": "Универсальное оружие на средней дистанции",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне — нужно иметь в инвентаре для получения Амстафф",
+        "quest": "Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "П*здец",
+        "name_en": "Pizdets",
+        "type": "Умный пистолет-пулемёт",
+        "tech": "Smart",
+        "unique_effect": "Smart-наведение, высокая скорострельность, отслеживающие снаряды.",
+        "best_against": "Движущиеся враги, несколько целей",
+        "how_to_get": "Убить Бориса Рябакова в квесте «Шпион в джунглях» (Spy in the Jungle)",
+        "quest": "Spy in the Jungle (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Порядок",
+        "name_en": "Order",
+        "type": "Электромагнитный дробовик (двустволка)",
+        "tech": "Tech",
+        "unique_effect": "Tech-тип, зарядные выстрелы с двумя стволами. Пробивает укрытия.",
+        "best_against": "Враги за укрытием, бронированные цели",
+        "how_to_get": "Купить у вендора Herold Lowe на стадионе EBM Petrochem в Догтауне",
+        "quest": "Вендор (не нужен квест)",
+        "location": "EBM Petrochem Stadium, Dogtown"
+      },
+      {
+        "name_ru": "Потрошитель",
+        "name_en": "Ripper",
+        "type": "Нож (метательный)",
+        "tech": "Power",
+        "unique_effect": "Можно метать. Работает в паре с Белоголовым орланом — выстрел в ногу, искалеченную Потрошителем, разрывает её. Нож возвращается в руку.",
+        "best_against": "Стелс, движущиеся враги в паре с Белоголовым орланом",
+        "how_to_get": "Купить у вендора Herold Lowe на стадионе EBM Petrochem в Догтауне",
+        "quest": "Вендор (без квеста)",
+        "location": "EBM Petrochem Stadium, Dogtown"
+      },
+      {
+        "name_ru": "Прокурорша",
+        "name_en": "Crimestopper",
+        "type": "Умный пистолет",
+        "tech": "Smart",
+        "unique_effect": "Попадания по кибер-конечностям могут отключить их — обездвижить врага и повысить крит-шанс.",
+        "best_against": "Кибер-усиленные враги, враги с имплантами конечностей",
+        "how_to_get": "Верхний этаж клуба «Тяжёлые сердца» (Heavy Hearts) — VIP-номер местного прокурора",
+        "quest": "Не требует квест — лут в локации",
+        "location": "Клуб Heavy Hearts, Dogtown"
+      },
+      {
+        "name_ru": "Райдзю",
+        "name_en": "Raiju",
+        "type": "Электромагнитный (Tech) пистолет-пулемёт",
+        "tech": "Tech",
+        "unique_effect": "Tech-SMG, зарядные пробивающие очереди.",
+        "best_against": "Враги за укрытием, бронированные цели",
+        "how_to_get": "Зона повышенной преступной активности в Догтауне",
+        "quest": "Преступная активность НЦПД",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Расэцу",
+        "name_en": "Rasetsu",
+        "type": "Электромагнитная снайперская винтовка",
+        "tech": "Tech",
+        "unique_effect": "Tech-снайпер с зарядными пробивающими выстрелами на огромной дистанции.",
+        "best_against": "Одиночные цели на большой дистанции, враги за укрытием",
+        "how_to_get": "Награда за основной квест «Я знаю тебя» (You Know My Name)",
+        "quest": "You Know My Name (основной квест)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Риск",
+        "name_en": "Riskit",
+        "type": "Стандартный пистолет",
+        "tech": "Power",
+        "unique_effect": "Высокий урон за выстрел.",
+        "best_against": "Одиночные цели, точные выстрелы",
+        "how_to_get": "Убить Данте в квесте «Под огнём с обеих сторон» (Shot by Both Sides)",
+        "quest": "Shot by Both Sides (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Роско",
+        "name_en": "Rosco",
+        "type": "Стандартный револьвер",
+        "tech": "Power",
+        "unique_effect": "Высокий урон за выстрел, Power-тип.",
+        "best_against": "Одиночные цели на средней дистанции",
+        "how_to_get": "Снять с тела Доджера в конце гига «В ожидании Доджера» (Waiting for Dodger)",
+        "quest": "Waiting for Dodger (гиг)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Рук",
+        "name_en": "Rook",
+        "type": "Стандартный пистолет",
+        "tech": "Power",
+        "unique_effect": "Power-пистолет с уникальными характеристиками. Связан с сюжетом PL.",
+        "best_against": "Универсальное применение на ближней-средней дистанции",
+        "how_to_get": "Получается в ходе основного сюжета Phantom Liberty (арка Dog Eat Dog — Firestarter)",
+        "quest": "Основной сюжет PL (Dog Eat Dog / Firestarter)",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Тайган",
+        "name_en": "Taigan",
+        "type": "Стандартный револьвер",
+        "tech": "Power",
+        "unique_effect": "Высокий урон за выстрел.",
+        "best_against": "Одиночные цели",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне",
+        "quest": "Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Фоксхаунд",
+        "name_en": "Foxhound",
+        "type": "Электромагнитная снайперская винтовка",
+        "tech": "Tech",
+        "unique_effect": "Tech-снайпер с зарядными выстрелами, пробивает укрытия.",
+        "best_against": "Одиночные цели за укрытием, бронированные враги на большой дистанции",
+        "how_to_get": "Преступная активность в Догтауне — подземный тоннель у точки быстрого перемещения Kress Street. Пройти тоннель до конца, убить босса, забрать ключ и открыть защищённую комнату.",
+        "quest": "Преступная активность НЦПД",
+        "location": "Dogtown, у Kress Street fast travel",
+        "tips": "Та же активность что и Raiju — это Tech SMG из той же локации. Проверь оба оружия."
+      },
+      {
+        "name_ru": "Чесапик",
+        "name_en": "Chesapeake",
+        "type": "Умный пистолет-пулемёт",
+        "tech": "Smart",
+        "unique_effect": "Smart-наведение с отслеживающими снарядами, высокая скорострельность.",
+        "best_against": "Движущиеся враги, несколько целей одновременно",
+        "how_to_get": "Специальный способ получения в Догтауне — уточни у вендора Herold Lowe в стадионе EBM Petrochem или через airdrops",
+        "quest": "Вендор / Airdrops",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Чинук",
+        "name_en": "Chinook",
+        "type": "Стандартная штурмовая винтовка",
+        "tech": "Power",
+        "unique_effect": "Стабильный автоматический огонь, уникальные характеристики Power-винтовки.",
+        "best_against": "Универсальное оружие на средней дистанции",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне или вендор Herold Lowe",
+        "quest": "Airdrops / вендор",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Шанс",
+        "name_en": "Chance",
+        "type": "Стандартный пистолет",
+        "tech": "Power",
+        "unique_effect": "Power-пистолет с уникальными характеристиками, высокий урон в голову.",
+        "best_against": "Точные выстрелы, одиночные цели",
+        "how_to_get": "Случайный лут из воздушных грузов (airdrops) в Догтауне или вендор Herold Lowe в стадионе EBM Petrochem",
+        "quest": "Airdrops / вендор",
+        "location": "Dogtown"
+      },
+      {
+        "name_ru": "Эреб",
+        "name_en": "Erebus",
+        "type": "Стандартный пистолет-пулемёт",
+        "tech": "Power",
+        "unique_effect": "Особый SMG с высоким устойчивым огнём. Один из лучших в своём классе.",
+        "best_against": "Группы врагов, подавление",
+        "how_to_get": "Схема крафта — во время основного квеста «Несколько повреждений» (Somewhat Damaged). Нужно найти и скрафтить.",
+        "quest": "Somewhat Damaged (основной квест)",
+        "location": "Dogtown",
+        "important_note": "Это схема крафта, не готовое оружие — нужны материалы для изготовления"
+      },
+      {
+        "name_ru": "Ястреб",
+        "name_en": "Hawk",
+        "type": "Стандартная штурмовая винтовка",
+        "tech": "Power",
+        "unique_effect": "Винтовка Мейерс — высокий урон, хорошая точность.",
+        "best_against": "Универсальное применение на средней-дальней дистанции",
+        "how_to_get": "Квест «Люкреция, моё отражение» (Lucretia My Reflection) — в укрытии на улице Кресс после ухода Рида и Мейерс. Прислонена к стене у входа.",
+        "quest": "Lucretia My Reflection (основной квест)",
+        "location": "Kress Street hideout, Dogtown"
+      },
+      {
+        "name_ru": "Яша",
+        "name_en": "Yasha",
+        "type": "Умная снайперская винтовка",
+        "tech": "Smart",
+        "unique_effect": "Smart-снайпер с наведением на цели. Уникальная механика отслеживания.",
+        "best_against": "Одиночные цели на большой дистанции, движущиеся враги",
+        "how_to_get": "Награда за подписку Twitch в период Phantom Liberty (сентябрь-октябрь 2023). Возможно доступна через другие источники позже.",
+        "quest": "Twitch Drop / специальный ивент",
+        "location": "Специальный способ получения",
+        "important_note": "Оригинально выдавалась за Twitch-подписку — уточни текущую доступность"
+      }
+    ],
+    "acquisition_type_guide": {
+      "airdrops": "Ищи красный дым в Dogtown — контейнеры с жёлтым символом патронов содержат культовое оружие",
+      "criminal_activity": "Тройной череп на карте — убить босса в зоне и получить дроп",
+      "vendor": "Herold Lowe в стадионе EBM Petrochem — продаёт несколько иконок (патч 2.1+)",
+      "main_quests": "Некоторые оружия получаются автоматически в ходе основного сюжета PL",
+      "gigs": "Ряд иконок — награды за выполнение заказов (гигов) Мистера Хэндса"
+    }
+  },
+  "quickhacks_complete": {
+    "overview": "Полные данные по всем квикхакам Cyberpunk 2077. Источник: Cyberpunk Wiki (Fandom). Для использования квикхаков нужен Кибердек (Operating System). RAM восстанавливается со временем или через перки/импланты.",
+    "response_template": "Когда игрок спрашивает про квикхак — давай: 1) что делает, 2) RAM cost и когда брать, 3) лучшие синергии и билды",
+    "acquisition": [
+      "Купить у нетраннер-вендоров",
+      "Дроп с вражеских нетраннеров",
+      "Лут из воздушных грузов (airdrops)",
+      "Через мини-игру Breach Protocol (Advanced Datamine)"
+    ],
+    "types": {
+      "Combat": "Наносят прямой урон, часто с доп. эффектом статуса. Средний RAM cost.",
+      "Control": "Отвлекают или обездвиживают врагов без летального исхода. Низкий/средний RAM cost. С перком Jailbreak можно установить в Monowire.",
+      "Covert": "Для стелса и манипуляций. Обычно не запускают прогресс трассировки. Самый низкий RAM cost.",
+      "Ultimate": "Самые мощные эффекты, самый высокий RAM cost.",
+      "Device": "Предустановлены на кибердеках. Используются на объектах и устройствах.",
+      "Vehicle": "Доступны с перком Carhacker. Хакают транспортные средства."
+    },
+    "quickhacks": {
+      "combat": [
+        {
+          "name_ru": "Перегрев",
+          "name_en": "Overheat",
+          "type": "Combat",
+          "ram_cost_by_tier": [
+            3,
+            4,
+            6,
+            7,
+            9
+          ],
+          "duration": 5,
+          "upload_time": 2,
+          "base_effect": "Поджигает врага, наносит урон со временем (Thermal DoT).",
+          "tier_effects": {
+            "tier2": "Повторная загрузка на уже горящего врага продлевает длительность.",
+            "tier3": "Успешные атаки по врагу под эффектом слегка продлевают длительность.",
+            "tier4": "Постепенно расплавляет броню врага (максимум -40%).",
+            "tier5": "Атаки по цели также наносят 10% термического урона от обычного физического.",
+            "iconic": "+10% бонус урона к эффекту Tier 5."
+          },
+          "best_synergies": [
+            "Contagion (детонация при контакте)",
+            "Builds с термическим оружием",
+            "Burn-стак билды"
+          ],
+          "best_use": "Дешёвый термический урон. Детонирует Contagion на Tier 4 — ключевая синергия для групповых убийств.",
+          "playstyles": [
+            "Contagion Burner",
+            "Netgunner Hybrid"
+          ]
+        },
+        {
+          "name_ru": "Короткое замыкание",
+          "name_en": "Short Circuit",
+          "type": "Combat",
+          "ram_cost_by_tier": [
+            3,
+            4,
+            5,
+            7,
+            10
+          ],
+          "duration_by_tier": [
+            1.5,
+            1.5,
+            1.0,
+            1.0,
+            0.5
+          ],
+          "upload_time": "varies",
+          "base_effect": "Наносит урон. Роботы, мехи, дроны и турели получают дополнительный урон.",
+          "tier_effects": {
+            "tier2": "+3 сек. к длительности всех активных Control-квикхаков на цели.",
+            "tier3": "+10% урона за каждый стак Cyberware Malfunction на враге. Этот усиленный урон вызывает взрыв слабого места врага.",
+            "tier4": "Накладывает EMP-эффект с дополнительным уроном со временем.",
+            "tier5": "+20% урона против врагов ниже уровня угрозы High.",
+            "iconic": "+15% бонус урона к эффекту Tier 3."
+          },
+          "best_synergies": [
+            "Cyberware Malfunction (стаки усиливают урон)",
+            "Control квикхаки (Tier 2 продлевает их)",
+            "Роботы/мехи/дроны (доп. урон)"
+          ],
+          "best_use": "Синергийный дамагер. Сначала Cyberware Malfunction для стаков, потом Short Circuit для огромного урона и взрыва слабого места.",
+          "playstyles": [
+            "Netgunner Hybrid",
+            "Boss Control"
+          ]
+        },
+        {
+          "name_ru": "Заражение",
+          "name_en": "Contagion",
+          "type": "Combat",
+          "ram_cost_by_tier": [
+            5,
+            6,
+            9,
+            9,
+            12
+          ],
+          "duration_by_tier": [
+            6,
+            6,
+            7,
+            7,
+            8
+          ],
+          "upload_time_by_tier": [
+            3,
+            3,
+            3,
+            2,
+            2
+          ],
+          "base_effect": "Заражает вирусом: яд DoT, распространяется на 2 врагов в радиусе 8м. Стакается 2 раза. Не работает на мехах, роботах, дронах и турелях.",
+          "tier_effects": {
+            "tier3": "Распространяется на 4 врагов. Длительность +1 сек.",
+            "tier4": "Поджог или Overheat на заражённом враге детонирует яд — взрыв снимает Contagion. Длительность +1 сек. Время загрузки -1 сек.",
+            "tier5": "+15% урона с каждым следующим распространением.",
+            "iconic": "Максимум стаков увеличен с 2 до 3."
+          },
+          "best_synergies": [
+            "Overheat (детонация на Tier 4)",
+            "Термическое оружие/Monowire для детонации",
+            "Raven Microcyber для распространения"
+          ],
+          "best_use": "Лучший АОЕ квикхак. Загрузи на одного врага в группе — яд распространяется. Добавь Overheat для детонации и массового урона.",
+          "playstyles": [
+            "Contagion Burner",
+            "Stealth Netrunner (для групп)"
+          ]
+        },
+        {
+          "name_ru": "Выжигание синапсов",
+          "name_en": "Synapse Burnout",
+          "type": "Combat",
+          "ram_cost_by_tier": [
+            10,
+            14,
+            16
+          ],
+          "duration": 3.0,
+          "upload_time": 3.0,
+          "base_effect": "Наносит тяжёлый урон. Урон увеличивается на 10% за каждую единицу RAM потраченной в данный момент (максимум +300%).",
+          "tier_effects": {
+            "tier4": "-2 RAM cost на 15 сек. после нейтрализации врага этим квикхаком. Стакается 3 раза.",
+            "tier5": "При активном Overclock бонус урона (за потраченный RAM) увеличивается на 100%. Нейтрализация врага продлевает Overclock на 3 сек.",
+            "iconic": "Максимальный бонус урона увеличен до 400%."
+          },
+          "best_synergies": [
+            "Overclock (перк Intelligence)",
+            "Высокий потраченный RAM для максимального бонуса",
+            "Blackwall Loop билды"
+          ],
+          "best_use": "Главный одиночный дамагер. Максимально эффективен при высоком потраченном RAM и активном Overclock. Приоритет: боссы и элита.",
+          "playstyles": [
+            "Blackwall Overclock Loop",
+            "Pure Netrunner DPS"
+          ]
+        }
+      ],
+      "control": [
+        {
+          "name_ru": "Перезагрузка оптики",
+          "name_en": "Reboot Optics",
+          "type": "Control",
+          "ram_cost_by_tier": [
+            2,
+            2,
+            5,
+            5,
+            7
+          ],
+          "duration_by_tier": [
+            8.0,
+            8.0,
+            8.0,
+            15.0,
+            15.0
+          ],
+          "upload_time": 0.3,
+          "base_effect": "Сбрасывает прогресс обнаружения врага. В бою снижает точность врага.",
+          "tier_effects": {
+            "tier2": "Продлевает базовый эффект.",
+            "tier3": "+15% урона по голове и слабым местам против цели.",
+            "tier4": "Ослепляет врага на всё время действия. Значительно снижает точность в бою.",
+            "tier5": "Нейтрализация ослеплённого врага хэдшотом или по слабому месту восстанавливает +3 RAM и распространяет эффект на ближайшего врага.",
+            "iconic": "Удваивает бонус урона Tier 3 к голове/слабым местам."
+          },
+          "best_synergies": [
+            "Memory Wipe + Sonic Shock (стелс комбо)",
+            "Снайперские/хэдшот билды (Tier 3-5)",
+            "Ping (разведка перед ослеплением)"
+          ],
+          "best_use": "Универсальный стелс и бой. Дешёвый способ сбросить агро или ослепить врага. Tier 5 + хэдшот = бесплатный RAM и цепная реакция.",
+          "playstyles": [
+            "Stealth Netrunner",
+            "Sniper Hybrid"
+          ]
+        },
+        {
+          "name_ru": "Неисправность киберварки",
+          "name_en": "Cyberware Malfunction",
+          "type": "Control",
+          "ram_cost_by_tier": [
+            3,
+            3,
+            4,
+            4,
+            4
+          ],
+          "duration": 10.0,
+          "upload_time": 0.3,
+          "base_effect": "Отключает киберварку врага на 10 сек. Увеличивает весь урон по цели на 5%.",
+          "tier_effects": {
+            "tier2": "Стакается до 3 / 5 / 8 раз.",
+            "tier3": "При 2 стаках — перманентное отключение киберварки.",
+            "tier4": "При 3 стаках — электрический DoT. Каждое применение обновляет длительность.",
+            "tier5": "При максимуме стаков — перегрузка киберварки, огромный урон. После этого Cyberware Malfunction нельзя применить повторно.",
+            "iconic": "Бонус урона увеличен с 5% до 15% за каждый стак."
+          },
+          "best_synergies": [
+            "Short Circuit (Tier 3 взрыв слабого места)",
+            "Любое оружие (пассивный бонус к урону)",
+            "Cripple Movement (контроль + усиление)"
+          ],
+          "best_use": "Важнейший Support-квикхак. Стакай перед каждым серьёзным врагом. Iconic версия даёт +15% за стак — на боссах это огромно.",
+          "playstyles": [
+            "Boss Control Monowire",
+            "Netgunner Hybrid",
+            "Все билды с кибердеком"
+          ]
+        },
+        {
+          "name_ru": "Сбой движения",
+          "name_en": "Cripple Movement",
+          "type": "Control",
+          "ram_cost_by_tier": [
+            3,
+            3,
+            4,
+            4,
+            6
+          ],
+          "duration": 12,
+          "upload_time": 0.3,
+          "base_effect": "Отключает движение врага и поддерживающую движение/уклонение киберварку.",
+          "tier_effects": {
+            "tier3": "+15% урона в ближнем бою против цели.",
+            "tier4": "Цель более восприимчива к финишерам в ближнем бою.",
+            "tier5": "+5% здоровья и +2 RAM после финишера против цели.",
+            "iconic": "Удваивает бонусы Tier 5."
+          },
+          "best_synergies": [
+            "Monowire (пин + добивание финишером)",
+            "Mantis Blades (финишеры)",
+            "Боссы и Санdevistan-пользователи (остановить уклонение)"
+          ],
+          "best_use": "Лучший контроль одиночной цели. Остановить опасного мелешника или босса, сблизиться и добить финишером для восстановления ресурсов.",
+          "playstyles": [
+            "Boss Control Monowire",
+            "Melee Netrunner Hybrid"
+          ]
+        },
+        {
+          "name_ru": "Глюк оружия",
+          "name_en": "Weapon Glitch",
+          "type": "Control",
+          "ram_cost_by_tier": [
+            3,
+            3,
+            4,
+            4,
+            6
+          ],
+          "duration": 14.0,
+          "upload_time": 0.3,
+          "base_effect": "Заклинивает оружие врага, делает его временно непригодным. Снижает точность и отключает Smart-наведение и пробивание укрытий.",
+          "tier_effects": {
+            "tier3": "Захват Smart-оружием на цели продлевает Weapon Glitch до снятия lock-on.",
+            "tier4": "Детонирует основное оружие врага, заставляет переключиться на вторичное (которое тоже под эффектом).",
+            "tier5": "+6% Crit Chance с Smart-оружием на 10 сек. при загрузке. Стакается 5 раз.",
+            "iconic": "Удваивает Crit Chance за стак Tier 5."
+          },
+          "best_synergies": [
+            "Smart оружие (Tier 3 и Tier 5 синергия)",
+            "Netgunner Hybrid билды"
+          ],
+          "best_use": "Поддержка для Smart-оружия. Tier 5 + Iconic дают огромный пассивный Crit Chance в Smart-билдах.",
+          "playstyles": [
+            "Netgunner Hybrid",
+            "Smart Weapon Builds"
+          ]
+        }
+      ],
+      "covert": [
+        {
+          "name_ru": "Пинг",
+          "name_en": "Ping",
+          "type": "Covert",
+          "untraceable": true,
+          "ram_cost_by_tier": [
+            4,
+            5,
+            7,
+            4,
+            4
+          ],
+          "duration_by_tier": [
+            8,
+            12,
+            16,
+            30,
+            30
+          ],
+          "upload_time": 1,
+          "base_effect": "Без трассировки. Обнаруживает врагов и устройства в локальной сети.",
+          "tier_effects": {
+            "tier3": "+25% скорость lock-on Smart-оружием на врагов под Ping.",
+            "tier5": "Подсвечивает устройства и позволяет хакать их сквозь стены.",
+            "iconic": "RAM cost -3."
+          },
+          "best_synergies": [
+            "Smart оружие (Tier 3 lock-on)",
+            "Любой стелс билд (разведка)",
+            "Netwatch Netdriver (дальность)"
+          ],
+          "best_use": "Обязательный квикхак для любого нетраннера. Всегда загружай перед входом в локацию. Tier 5 = хак через стены.",
+          "playstyles": [
+            "Все нетраннер билды",
+            "Stealth Netrunner",
+            "Netgunner Hybrid"
+          ]
+        },
+        {
+          "name_ru": "Приманка",
+          "name_en": "Bait",
+          "type": "Covert",
+          "untraceable": true,
+          "ram_cost_by_tier": [
+            2,
+            3,
+            4,
+            3,
+            3
+          ],
+          "duration": 15,
+          "upload_time": 0.3,
+          "base_effect": "Без трассировки. Заманивает врага к твоей текущей позиции в состоянии тревоги.",
+          "tier_effects": {
+            "tier2": "Враг не переходит в состояние тревоги при приближении.",
+            "tier3": "Можно использовать в бою, вытаскивая врага из укрытия.",
+            "tier4": "При загрузке через камеру враг идёт к камере, а не к тебе.",
+            "tier5": "При повторной загрузке вне боя враг останавливается и уходит обратно.",
+            "iconic": "RAM cost -1."
+          },
+          "best_synergies": [
+            "Request Backup (Tier 5 — группа врагов)",
+            "Sonic Shock (Tier 3 — уйти к определённой точке)",
+            "Стелс билды для изоляции целей"
+          ],
+          "best_use": "Изолируй врагов поодиночке. Tier 2 = бесшумное манипулирование. Отличная замена тейкдаунам в тесных локациях.",
+          "playstyles": [
+            "Stealth Netrunner"
+          ]
+        },
+        {
+          "name_ru": "Запрос подмоги",
+          "name_en": "Request Backup",
+          "type": "Covert",
+          "ram_cost_by_tier": [
+            3,
+            4,
+            6,
+            3,
+            3
+          ],
+          "duration": 15,
+          "upload_time": 2,
+          "range_by_tier": [
+            "10m",
+            "15m",
+            "20m",
+            "30m",
+            "30m"
+          ],
+          "base_effect": "Симулирует запрос помощи — призывает 1 союзника врага к его позиции.",
+          "tier_effects": {
+            "tier3": "При загрузке на врага под Sonic Shock — тот уходит помогать союзнику в другом месте.",
+            "tier4": "Можно использовать в бою для выманивания из укрытия.",
+            "tier5": "При загрузке на врага под Bait — до 4 врагов приходят к нему.",
+            "iconic": "+1 к количеству призванных врагов (Tier 5). RAM cost -3."
+          },
+          "best_synergies": [
+            "Bait (Tier 5 массовая приманка)",
+            "Sonic Shock (Tier 3 переброска врага)"
+          ],
+          "best_use": "Утилитарный манипулятор. Tier 5 + Bait = собрать всех врагов в одном месте и закончить через Contagion или гранату.",
+          "playstyles": [
+            "Stealth Netrunner",
+            "Crowd Control"
+          ]
+        },
+        {
+          "name_ru": "Стирание памяти",
+          "name_en": "Memory Wipe",
+          "type": "Covert",
+          "untraceable": true,
+          "ram_cost_by_tier": [
+            8,
+            10,
+            10,
+            10,
+            32
+          ],
+          "upload_time_by_tier": [
+            1.5,
+            1.5,
+            1.5,
+            1.5,
+            3.0
+          ],
+          "base_effect": "Без трассировки. Заставляет врага не замечать тебя на короткое время. -25% к прогрессу трассировки вне боя.",
+          "tier_effects": {
+            "tier4": "Квикхаки, поставленные в очередь после Memory Wipe, нетрассируемы. +10% к снижению трассировки.",
+            "tier5": "Заставляет ВСЕХ врагов выйти из боевого состояния.",
+            "iconic": "Время загрузки -7 сек."
+          },
+          "best_synergies": [
+            "Sonic Shock + Reboot Optics (Tier 5 Sonic Shock — потеря сознания)",
+            "Stealth цепочки",
+            "Tier 4 для нетрассируемых очередей"
+          ],
+          "best_use": "Ключевой стелс-квикхак. Epic-тир важен для нетрассируемых хак-цепочек. Tier 5 — экстренный выход из боя для всей локации.",
+          "important_note": "Tier 5 стоит 32 RAM — очень дорого. Используй только при наличии мощного кибердека.",
+          "playstyles": [
+            "Stealth Netrunner"
+          ]
+        },
+        {
+          "name_ru": "Акустический шок",
+          "name_en": "Sonic Shock",
+          "type": "Covert",
+          "untraceable": true,
+          "ram_cost_by_tier": [
+            3,
+            4,
+            5,
+            6,
+            2
+          ],
+          "duration": 20,
+          "upload_time_by_tier": [
+            1.0,
+            1.0,
+            1.0,
+            1.0,
+            2.0
+          ],
+          "base_effect": "Без трассировки (но квикхаки против цели всё равно повышают трассировку). Оглушает врага — снижает способность обнаруживать тебя.",
+          "tier_effects": {
+            "tier3": "Глушит связь — враг не может сообщить союзникам. Квикхаки больше не повышают трассировку.",
+            "tier4": "Скрывает врага от сенсоров союзников — они его игнорируют.",
+            "tier5": "Загрузка Sonic Shock на врага под Memory Wipe И Reboot Optics — потеря сознания.",
+            "iconic": "RAM cost -4."
+          },
+          "best_synergies": [
+            "Memory Wipe + Reboot Optics (Tier 5 трио = потеря сознания)",
+            "Stealth тейкдауны",
+            "Request Backup (Tier 3 перемещение врага)"
+          ],
+          "best_use": "Основа стелс-цепочки. Memory Wipe → Reboot Optics → Sonic Shock = бесшумная нейтрализация без тейкдауна. Дешевле при низких тирах.",
+          "stealth_combo": "Memory Wipe + Reboot Optics + Sonic Shock = потеря сознания (Tier 5 Sonic Shock)",
+          "playstyles": [
+            "Stealth Netrunner"
+          ]
+        }
+      ],
+      "ultimate": [
+        {
+          "name_ru": "Киберпсихоз",
+          "name_en": "Cyberpsychosis",
+          "type": "Ultimate",
+          "ram_cost": 22,
+          "duration_by_tier": [
+            20.0,
+            60.0
+          ],
+          "upload_time": 1.5,
+          "base_effect": "Заставляет врага атаковать ближайшего союзника или противника. Если никого рядом нет — суицид. -6 RAM после применения Cyberware Malfunction или EMP-эффекта. Стакается 3 раза.",
+          "tier_effects": {
+            "tier5": "+25% длительности и +25% урона цели за каждый другой активный квикхак на ней.",
+            "iconic": "+15% дополнительной длительности и +15% урона за каждый квикхак (дополнительно к Tier 5)."
+          },
+          "best_synergies": [
+            "Cyberware Malfunction (снижает RAM cost)",
+            "Многостаковые квикхак билды (Tier 5 бонус)",
+            "Любая плотная группа врагов"
+          ],
+          "best_use": "Загрузи на самого сильного врага в группе — он атакует союзников. Tier 5 + много квикхаков на цели = огромный урон от самого врага.",
+          "playstyles": [
+            "Crowd Control Netrunner",
+            "Chaos builds"
+          ]
+        },
+        {
+          "name_ru": "Суицид",
+          "name_en": "Suicide",
+          "type": "Ultimate",
+          "ram_cost": 24,
+          "duration": 1.0,
+          "upload_time": 12.5,
+          "base_effect": "Заставляет врага приставить пистолет к голове и нажать курок. Нейтрализует цель. -10 RAM на 30 сек. после ближнего финишера. Стакается 2 раза.",
+          "tier_effects": {
+            "tier5": "+10% здоровья при нейтрализации через Suicide.",
+            "iconic": "+20% здоровья при нейтрализации через Suicide."
+          },
+          "best_synergies": [
+            "Melee Finisher билды (снижение RAM)",
+            "Высокий RAM pool для покрытия стоимости"
+          ],
+          "best_use": "Гарантированное убийство любого врага без иммунитета. Очень долгое время загрузки — используй только из укрытия или стелса. Хорошо сочетается с Cripple Movement для иммобилизации.",
+          "warning": "Upload time 12.5 сек — цель может убить тебя пока идёт загрузка.",
+          "playstyles": [
+            "Stealth Ultimate",
+            "Melee Finisher builds"
+          ]
+        },
+        {
+          "name_ru": "Системный коллапс",
+          "name_en": "System Collapse",
+          "type": "Ultimate",
+          "untraceable": true,
+          "ram_cost": 28,
+          "duration": 1.0,
+          "upload_time": "varies",
+          "base_effect": "Без трассировки. Вырубает врага без шума, поражая нервную систему. -12 RAM после снижения прогресса трассировки. Стакается 2 раза.",
+          "tier_effects": {
+            "tier5": "Нейтрализация снижает прогресс трассировки на 20%. Нейтрализация нетраннера — сбрасывает всю трассировку.",
+            "iconic": "Дополнительное снижение трассировки на 20% при нейтрализации."
+          },
+          "best_synergies": [
+            "Stealth билды (нет шума, нет трассировки)",
+            "Локации с нетраннерами (сброс трассировки)"
+          ],
+          "best_use": "Премиум стелс-нейтрализация. Идеально против нетраннеров — убиваешь и сбрасываешь трассировку одновременно. Самый дорогой нетрассируемый квикхак.",
+          "playstyles": [
+            "Stealth Netrunner (high-end)"
+          ]
+        },
+        {
+          "name_ru": "Детонация гранаты",
+          "name_en": "Detonate Grenade",
+          "type": "Ultimate",
+          "ram_cost": 24,
+          "duration_by_tier": [
+            15.0,
+            1.0
+          ],
+          "upload_time": 1.0,
+          "base_effect": "Заставляет врага детонировать гранату в руках. Тип взрыва зависит от гранаты врага. Также детонирует слабые места роботов, дронов, мехов и турелей. -10 RAM после взрыва врага/машины/устройства. Стакается 2 раза.",
+          "tier_effects": {
+            "tier5": "Детонация происходит мгновенно после загрузки.",
+            "iconic": "-5 дополнительного RAM после взрыва. Стаки уменьшены до 1."
+          },
+          "best_synergies": [
+            "Открытие боя (взрыв группы с гранатами)",
+            "Роботы/дроны/мехи (детонация слабых мест)",
+            "Combo с другими взрывными квикхаками"
+          ],
+          "best_use": "Ситуативный но мощный. Tier 5 = мгновенный взрыв. Особенно хорош против роботов и в начале боя когда враги кучкуются.",
+          "playstyles": [
+            "Aggressive Netrunner",
+            "Combat Opener"
+          ]
+        },
+        {
+          "name_ru": "Врата Чёрной стены",
+          "name_en": "Blackwall Gateway",
+          "type": "Ultimate",
+          "expansion": "Phantom Liberty",
+          "ram_cost": 14,
+          "duration": 9,
+          "upload_time": "varies (gets shorter with each spread)",
+          "base_effect": "Распространяется на 3 врагов в радиусе 20м. Летальный урон кибернетике и нервной системе. Мехи, роботы, дроны, турели — деактивируются. Автоматически тратит RAM при каждом распространении. Каждое следующее распространение быстрее но дороже. Стоимость можно снизить вдвое — заплатив здоровьем.",
+          "tier_effects": {
+            "base": "Нет тирового прогресса — это финальный квикхак."
+          },
+          "best_synergies": [
+            "Overclock (перк Intelligence — здоровье как RAM)",
+            "Kanto Cyberdeck (максимальная эффективность)",
+            "Healing cyberware для компенсации расхода здоровья",
+            "Synapse Burnout для добивания выживших"
+          ],
+          "best_use": "Эндгейм цепное убийство. Загрузи, активируй Overclock, используй здоровье как RAM для дешёвых распространений. Очищает комнаты мгновенно.",
+          "how_to_get": "Миссируемый квикхак — получить сложно. Фарм нетраннеров в Pacifica (West Wind Apartments) или высокие тиры кибердека.",
+          "warning": "Требует продвинутую настройку билда — не для новичков.",
+          "playstyles": [
+            "Blackwall Overclock Loop"
+          ]
+        }
+      ],
+      "device": [
+        {
+          "name_en": "Request Backup",
+          "name_ru": "Запрос подмоги",
+          "type": "Device",
+          "effect": "Симулирует запрос помощи в сети — ближайший союзник цели приходит к ней."
+        },
+        {
+          "name_en": "Distract Enemies",
+          "name_ru": "Отвлечь врагов",
+          "type": "Device",
+          "effect": "Вызывает сбой устройства — хаотичное поведение отвлекает ближайших врагов."
+        },
+        {
+          "name_en": "Initiate Overload",
+          "name_ru": "Перегрузка",
+          "type": "Device",
+          "effect": "Перегружает электрическую схему устройства — перманентно разрушает его."
+        },
+        {
+          "name_en": "Friendly Mode",
+          "name_ru": "Дружественный режим",
+          "type": "Device",
+          "effect": "Переопределяет модуль распознавания цели — тебя воспринимают как союзника. Турели и камеры атакуют твоих врагов."
+        },
+        {
+          "name_en": "Assist Mode",
+          "name_ru": "Режим помощи",
+          "type": "Device",
+          "effect": "Переводит турель в режим ручного управления."
+        },
+        {
+          "name_en": "Take Control",
+          "name_ru": "Захват управления",
+          "type": "Device",
+          "effect": "Включает дистанционное управление турелями и другими устройствами."
+        },
+        {
+          "name_en": "Remote Deactivation",
+          "name_ru": "Дистанционная деактивация",
+          "type": "Device",
+          "effect": "Управляет базовыми функциями устройства — открыть/закрыть двери, активировать/деактивировать камеры."
+        }
+      ],
+      "vehicle": [
+        {
+          "name_en": "Take Control",
+          "name_ru": "Захват управления",
+          "type": "Vehicle",
+          "requirement": "Перк Carhacker",
+          "effect": "Дистанционное управление транспортным средством."
+        },
+        {
+          "name_en": "Floor It",
+          "name_ru": "Газ в пол",
+          "type": "Vehicle",
+          "requirement": "Перк Carhacker",
+          "effect": "Захватывает управление машиной — максимальное ускорение, ограниченное рулевое управление."
+        },
+        {
+          "name_en": "Self-destruct",
+          "name_ru": "Самоуничтожение",
+          "type": "Vehicle",
+          "requirement": "Перк Carhacker",
+          "effect": "Вызывает взрыв двигателя целевого транспортного средства."
+        },
+        {
+          "name_en": "Emergency Brake",
+          "name_ru": "Экстренное торможение",
+          "type": "Vehicle",
+          "requirement": "Перк Carhacker",
+          "effect": "Активирует ручной тормоз машины и включает сигнализацию."
+        }
+      ]
+    },
+    "key_synergies_summary": {
+      "stealth_chain": {
+        "name": "Стелс-цепочка нейтрализации",
+        "combo": "Memory Wipe → Reboot Optics → Sonic Shock (Tier 5)",
+        "result": "Нейтрализация без шума и без тейкдауна",
+        "ram_cost_approx": "13-17 RAM"
+      },
+      "contagion_explosion": {
+        "name": "Взрывное заражение",
+        "combo": "Contagion → Overheat (или термическое оружие)",
+        "result": "АОЕ взрыв яда — мгновенное уничтожение группы",
+        "ram_cost_approx": "8-15 RAM"
+      },
+      "malfunction_burst": {
+        "name": "Малфункция + Короткое замыкание",
+        "combo": "Cyberware Malfunction (стаки) → Short Circuit",
+        "result": "Огромный урон + взрыв слабого места",
+        "ram_cost_approx": "6-14 RAM"
+      },
+      "blackwall_loop": {
+        "name": "Петля Чёрной стены",
+        "combo": "Overclock → Blackwall Gateway (здоровье как RAM)",
+        "result": "Цепное убийство всех врагов в радиусе",
+        "required": [
+          "Kanto Cyberdeck",
+          "Overclock perk",
+          "Healing cyberware"
+        ],
+        "ram_cost_approx": "14+ RAM (масштабируется)"
+      },
+      "boss_lockdown": {
+        "name": "Заморозка босса",
+        "combo": "Cripple Movement → Cyberware Malfunction (стаки) → оружие/Monowire",
+        "result": "Босс обездвижен и берёт увеличенный урон",
+        "ram_cost_approx": "6-10 RAM"
+      }
+    },
+    "cyberdeck_recommendations": {
+      "stealth": "Tetratronic Rippler или Raven Microcyber — бонусы к стелс-квикхакам",
+      "contagion_spread": "Raven Microcyber — увеличивает радиус распространения Contagion",
+      "smart_weapon": "Militech Paraline — бонусы к Smart-оружию + квикхаки",
+      "blackwall": "Kanto (Militech Canto) — специально для Blackwall Gateway",
+      "general": "NetWatch Netdriver или Arasaka Shadow — универсальные варианты"
+    }
+  },
+  "iconic_vehicles": {
+    "overview": "Культовые транспортные средства Cyberpunk 2077. У многих машин есть связанные квесты или особые условия получения.",
+    "response_template": "Когда игрок спрашивает о машине или мотоцикле — давай: 1) чем уникально, 2) как получить точно (квест, фиксер, покупка), 3) есть ли связанный квест или особое событие после получения",
+    "vehicles": [
+      {
+        "name": "Porsche 911 Turbo (930)",
+        "name_alt": "Johnny's Porsche",
+        "type": "Спорткар",
+        "unique_note": "Оригинальная машина Джонни Сильверхенда. Культовый автомобиль с историей в игре.",
+        "how_to_get": "Побочный квест «Чиппин'In» (Chippin' In) — победить Грейсона на корабле Эбуника, взять ключ и открыть контейнер с машиной.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "Chippin' In (побочный квест)",
+        "related_quest": null,
+        "location": "Корабль Эбуника, Northside, Watson",
+        "special_event": "После получения машины — разговор с Джонни о значении автомобиля для него."
+      },
+      {
+        "name": "Porsche 911 Turbo Cabriolet (930)",
+        "name_alt": "Turbo 911 «Кабриолет» (930)",
+        "type": "Спорткар",
+        "unique_note": "Вторая культовая машина Джонни — кабриолет. Добавлена в патче 2.1. После покупки триггерит побочный квест с двойником.",
+        "how_to_get": "Купить через сайт AUTOFIXER за 73,000 ED. После покупки Муамар Рейес (El Capitan) пишет что машина пропала вместе с курьером — нужно найти.",
+        "cost": "73,000 ED (можно дешевле со скидкой)",
+        "street_cred": null,
+        "quest": "Shape of a Pony (побочный квест, триггерится автоматически после покупки)",
+        "related_quest": "Shape of a Pony",
+        "location": "AUTOFIXER netpage → последнее известное место машины → найти тело «Джонни Сильвермана»",
+        "special_event": "ВАЖНО: После покупки появляется квест «Shape of a Pony». По последнему местонахождению машины найдёшь тело человека с именем «Johnny Silverman» — двойника. Сядь в машину и напиши El Capitan чтобы закрыть квест.",
+        "patch": "2.1"
+      },
+      {
+        "name": "Arch Nazare «Itsumade»",
+        "type": "Мотоцикл",
+        "unique_note": "Мотоцикл Джеки Уэллса. Культовый байк с историей.",
+        "how_to_get": "Побочный квест «The Highwayman». Гараж в Heywood, код двери — 0214.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "The Highwayman (побочный квест)",
+        "related_quest": null,
+        "location": "Гараж в Heywood",
+        "special_event": null
+      },
+      {
+        "name": "Rayfield Caliburn",
+        "name_alt": "Rayfield Caliburn «Mordred»",
+        "type": "Гиперкар",
+        "unique_note": "Один из самых быстрых автомобилей в игре. Можно получить бесплатно.",
+        "how_to_get": "1) Бесплатно: в заброшенной шахте в Badlands — без квеста, просто найти. 2) Через квест «The Beast in Me» как награда.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "The Beast in Me (опционально) / или просто найти в шахте",
+        "related_quest": null,
+        "location": "Шахта в Badlands / награда за «The Beast in Me»",
+        "special_event": "«Mordred» — тёмная версия Caliburn, тоже можно найти в Badlands."
+      },
+      {
+        "name": "Quadra Turbo-R V-Tech",
+        "type": "Спорткар",
+        "unique_note": "Высокоскоростной спорткар. Получается через гиг или побочный квест.",
+        "how_to_get": "1) Гиг «Life's Work» от Падре (Heywood) — взломать систему магазина Wicked Tires, подождать ~24ч и получить текст с адресом машины в Rancho Coronado. 2) Побочный квест «Sex on Wheels».",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "Life's Work (гиг) или Sex on Wheels (побочный квест)",
+        "related_quest": null,
+        "location": "Rancho Coronado, Santo Domingo",
+        "special_event": null
+      },
+      {
+        "name": "Quadra Type-66 «Hoon»",
+        "type": "Боевой спорткар",
+        "unique_note": "Трибьют Кену Блоку. Вооружённый автомобиль с ракетной системой (патч 2.3). Получается бесплатно через скрытый квест.",
+        "how_to_get": "Скрытый квест «I'm in Love with My Car». Приехать на Northside Industrial Park (Watson), найти ключи в ящике под полкой склада — машина твоя.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "I'm in Love with My Car (скрытый побочный квест)",
+        "related_quest": null,
+        "location": "Northside Industrial Park, Watson",
+        "special_event": "В патче 2.3 у Hoon улучшена ракетная система наведения."
+      },
+      {
+        "name": "Quadra Type-66 «Cthulhu»",
+        "type": "Боевой спорткар",
+        "unique_note": "Машина Панам Палмер. Культовый внедорожник с высокой проходимостью.",
+        "how_to_get": "Награда за квест «The Beast in Me» (если спас Сэмпсона). Альтернативно — купить у фиксера в Watson.",
+        "cost": "Бесплатно (квест) / платно (фиксер)",
+        "street_cred": null,
+        "quest": "The Beast in Me",
+        "related_quest": null,
+        "location": "Watson (фиксер) / награда за квест",
+        "special_event": null
+      },
+      {
+        "name": "Mizutani Shion «Coyote»",
+        "type": "Мотоцикл",
+        "unique_effect": "Высокая скорость и манёвренность в Badlands.",
+        "how_to_get": "Купить у фиксера Dakota Smith в Badlands.",
+        "cost": "115,000 ED",
+        "street_cred": 20,
+        "quest": null,
+        "related_quest": null,
+        "location": "Badlands, у Sunset Motel",
+        "special_event": null
+      },
+      {
+        "name": "Rayfield Aerondight «Guinevere»",
+        "type": "Люксовый гиперкар",
+        "unique_note": "Самый дорогой автомобиль в игре. Требует максимальный Street Cred.",
+        "how_to_get": "Купить у фиксера Wakako Okada.",
+        "cost": "155,000 ED",
+        "street_cred": 50,
+        "quest": null,
+        "related_quest": null,
+        "location": "North Oak, Westbrook",
+        "special_event": null
+      },
+      {
+        "name": "Villefort Cortes V5000 Valor",
+        "type": "Исполнительный седан",
+        "unique_note": "Представительский автомобиль высокого класса.",
+        "how_to_get": "Купить у фиксера Sebastian «Padre» Ibarra.",
+        "cost": "28,000 ED",
+        "street_cred": 12,
+        "quest": null,
+        "related_quest": null,
+        "location": "Heywood",
+        "special_event": null
+      },
+      {
+        "name": "Villefort Alvarado V4F 570 Delegate",
+        "type": "Исполнительный кабриолет",
+        "unique_note": "Культовый кабриолет из рекламы Night City.",
+        "how_to_get": "Купить у фиксера Sebastian «Padre» Ibarra.",
+        "cost": "62,000 ED",
+        "street_cred": 19,
+        "quest": null,
+        "related_quest": null,
+        "location": "Heywood",
+        "special_event": null
+      },
+      {
+        "name": "Quadra Type-66 «Avenger»",
+        "type": "Спорткар",
+        "unique_note": "Мощный спорткар из линейки Type-66.",
+        "how_to_get": "Купить у фиксера Dino Dinovic.",
+        "cost": "55,000 ED",
+        "street_cred": 20,
+        "quest": null,
+        "related_quest": null,
+        "location": "City Center",
+        "special_event": null
+      },
+      {
+        "name": "Quadra Type-66 «Javelina»",
+        "type": "Внедорожник",
+        "unique_note": "Полноприводной спорткар для бездорожья.",
+        "how_to_get": "Купить у фиксера Dakota Smith.",
+        "cost": "73,000 ED",
+        "street_cred": 30,
+        "quest": null,
+        "related_quest": null,
+        "location": "Badlands",
+        "special_event": null
+      },
+      {
+        "name": "Delamain No. 21",
+        "type": "Автономное такси",
+        "unique_note": "Уникальное такси Delamain. Получается за завершение квеста про такси.",
+        "how_to_get": "Награда за квест «Don't Lose Your Mind» — найти и освободить все такси Delamain по Night City.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "Don't Lose Your Mind (побочный квест)",
+        "related_quest": null,
+        "location": "Автоматически добавляется в гараж",
+        "special_event": "В патче 2.3 Delamain доступен как сервис вызова такси по всему городу после завершения квеста."
+      },
+      {
+        "name": "Arch Jackie (тюнингованный)",
+        "type": "Мотоцикл",
+        "unique_note": "Персональный мотоцикл Джеки Уэллса. Мемориальный предмет.",
+        "how_to_get": "Награда за квест «Heroes» — мемориальный квест по Джеки.",
+        "cost": "Бесплатно",
+        "street_cred": null,
+        "quest": "Heroes (побочный квест)",
+        "related_quest": null,
+        "location": "Автоматически добавляется в гараж",
+        "special_event": "Только одна возможность получить — до конца квеста Heroes."
+      }
+    ],
+    "acquisition_types": {
+      "quest_reward": "Бесплатно через выполнение квеста — самый надёжный способ",
+      "autofixer": "Покупка через терминал AUTOFIXER — некоторые машины триггерят квест после покупки",
+      "fixer_text": "Фиксер присылает SMS с предложением купить машину когда достигнут нужный Street Cred",
+      "hidden_spawn": "Машина стоит в мире бесплатно — нужно найти и взять ключи"
+    },
+    "important_notes": {
+      "porsche_cabriolet_warning": "Porsche 911 Turbo Cabriolet (930) — это НЕ та же машина что из квеста Chippin' In. Это отдельный кабриолет, добавленный в патче 2.1, с собственным квестом Shape of a Pony.",
+      "caliburn_free": "Rayfield Caliburn можно получить бесплатно без квеста — просто найти в шахте в Badlands. Одна из лучших машин в игре, доступная очень рано.",
+      "hoon_missiles": "В патче 2.3 у Type-66 Hoon улучшена ракетная система — теперь ракеты лучше наводятся на цели."
+    }
+  }
+}
