@@ -1,6 +1,6 @@
-const MAX_WIDTH = 1920;
+const MAX_WIDTH = 1280;
 const JPEG_QUALITY = 0.7;
-const MAX_BYTES = 4 * 1024 * 1024; // 4MB
+const MAX_BYTES = 3 * 1024 * 1024; // 3MB
 
 export function compressImage(dataUrl) {
   return new Promise((resolve) => {
@@ -22,7 +22,7 @@ export function compressImage(dataUrl) {
       let quality = JPEG_QUALITY;
       let result = canvas.toDataURL("image/jpeg", quality);
 
-      // Reduce quality iteratively if still over 4MB
+      // Reduce quality iteratively if still over 3MB
       while (result.length * 0.75 > MAX_BYTES && quality > 0.1) {
         quality -= 0.1;
         result = canvas.toDataURL("image/jpeg", quality);

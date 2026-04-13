@@ -10,8 +10,6 @@ import {
 } from "@/components/ui/dialog";
 import { ICON_SETTINGS, ICON_SMALL } from "@/constants";
 
-const VALID_CODE = "NIGHTCITY2077";
-
 const promoInputStyle = {
   flex: 1,
   padding: "0.5rem 0.6rem",
@@ -40,8 +38,9 @@ export function HeaderControls({ language, lang, onToggleLanguage, settingsOpen,
   const [promoStatus, setPromoStatus] = useState(null); // null | 'success' | 'error'
 
   const handleApply = () => {
-    if (promoInput.trim().toUpperCase() === VALID_CODE) {
-      onPromoActivate(VALID_CODE);
+    const code = promoInput.trim();
+    if (code.length > 0) {
+      onPromoActivate(code);
       setPromoStatus("success");
       setPromoInput("");
     } else {

@@ -91,7 +91,7 @@ function getMimeType(base64) {
 }
 
 const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS || "https://cyberpunk-assistant.netlify.app",
   "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Content-Type": "application/json",
@@ -224,11 +224,17 @@ exports.handler = async (event) => {
   const { image_base64, language = "en", user_question = "", promo_code = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
+  const imageSizeBytes = Math.ceil(image_base64.length * 0.75);
+  if (imageSizeBytes > 3 * 1024 * 1024) {
+    return jsonResponse(400, { detail: "Screenshot too large - please use a smaller image or screenshot" });
+  }
+
   const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
     || event.headers["client-ip"]
     || "unknown";
 
-  const hasPremium = VALID_PROMO_CODES.includes(promo_code);
+  const envPromo = process.env.PROMO_CODE;
+  const hasPremium = (envPromo && promo_code === envPromo) || VALID_PROMO_CODES.includes(promo_code);
 
   if (!hasPremium) {
     if (!checkRateLimit(clientIp)) {
@@ -251,7 +257,7 @@ exports.handler = async (event) => {
     const timestamp = new Date().toISOString();
     await saveToNotion(hint, user_question, language, clientIp);
 
-    return jsonResponse(200, { id, hint, timestamp });
+    return jsonResponse(200, { id, hint, timestamp, premium: hasPremium });
   } catch (err) {
     console.log("[analyze] ERROR:", err.message);
     const msg = (err.message || "").toLowerCase();
