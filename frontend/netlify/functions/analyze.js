@@ -91,7 +91,7 @@ function getMimeType(base64) {
 }
 
 const CORS_HEADERS = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": process.env.ALLOWED_ORIGINS || "https://cyberpunk-assistant.netlify.app",
   "Access-Control-Allow-Headers": "Content-Type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
   "Content-Type": "application/json",

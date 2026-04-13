@@ -6,7 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 class NightCityAPITester:
-    def __init__(self, base_url="https://nc-companion.preview.emergentagent.com"):
+    def __init__(self, base_url="https://neon-companion-5.preview.emergentagent.com"):
         self.base_url = base_url
         self.api_url = f"{base_url}/api"
         self.tests_run = 0
