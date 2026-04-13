@@ -224,6 +224,11 @@ exports.handler = async (event) => {
   const { image_base64, language = "en", user_question = "", promo_code = "" } = body;
   if (!image_base64) return jsonResponse(400, { detail: "image_base64 is required" });
 
+  const imageSizeBytes = Math.ceil(image_base64.length * 0.75);
+  if (imageSizeBytes > 3 * 1024 * 1024) {
+    return jsonResponse(400, { detail: "Screenshot too large - please use a smaller image or screenshot" });
+  }
+
   const clientIp = event.headers["x-forwarded-for"]?.split(",")[0]?.trim()
     || event.headers["client-ip"]
     || "unknown";
