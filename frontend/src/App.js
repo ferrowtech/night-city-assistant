@@ -21,7 +21,7 @@ function App() {
   const [language, setLanguage] = useState("en");
   const [sharing, setSharing] = useState(false);
   const [promoCode, setPromoCode] = useState(() => localStorage.getItem("nc_promo") || "");
-  const isPremium = promoCode === "NIGHTCITY2077";
+  const isPremium = promoCode.length > 0;
   const cameraInputRef = useRef(null);
   const galleryInputRef = useRef(null);
 

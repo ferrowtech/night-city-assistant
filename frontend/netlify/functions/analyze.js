@@ -233,7 +233,8 @@ exports.handler = async (event) => {
     || event.headers["client-ip"]
     || "unknown";
 
-  const hasPremium = VALID_PROMO_CODES.includes(promo_code);
+  const envPromo = process.env.PROMO_CODE;
+  const hasPremium = (envPromo && promo_code === envPromo) || VALID_PROMO_CODES.includes(promo_code);
 
   if (!hasPremium) {
     if (!checkRateLimit(clientIp)) {
@@ -256,7 +257,7 @@ exports.handler = async (event) => {
     const timestamp = new Date().toISOString();
     await saveToNotion(hint, user_question, language, clientIp);
 
-    return jsonResponse(200, { id, hint, timestamp });
+    return jsonResponse(200, { id, hint, timestamp, premium: hasPremium });
   } catch (err) {
     console.log("[analyze] ERROR:", err.message);
     const msg = (err.message || "").toLowerCase();
